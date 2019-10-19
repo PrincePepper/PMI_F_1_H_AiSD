@@ -38,7 +38,7 @@ int main() {
             c = 0;
         }
     }
-    fprintf(fout, "%d\n", (int) round((double) N / (double) v) + 1);
+    fprintf(fout, "%d\n", (int) round((double) N / (double) v));
     for (int i = 0; i <= (N / 2) * v; i += v)
         fprintf(fout, "%d ", i + 1);
 }
