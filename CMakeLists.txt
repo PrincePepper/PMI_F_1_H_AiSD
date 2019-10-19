@@ -3,15 +3,18 @@ project(untitled C)
 
 set(CMAKE_C_STANDARD 99)
 
+add_executable(test test.c)
+
 add_executable(summa LiMP/summa.c)
 add_executable(eggs LiMP/eggs.c )
-add_executable(test test.c)
-add_executable(povtor algoritm/povtor.c)
-add_executable(tree algoritm/tree.c )
-add_executable(documents algoritm/documents.c)
+add_executable(grep LiMP/GREP.c)
 add_executable(fence LiMP/fence.c )
 add_executable(ideas LiMP/ideas.c)
 add_executable(finding "LiMP/ finding_vasya.c")
+
+add_executable(povtor algoritm/povtor.c)
+add_executable(tree algoritm/tree.c)
+add_executable(documents algoritm/documents.c)
 add_executable(progressia algoritm/progressia.c)
 add_executable(chess algoritm/chess.c)
 add_executable(tricky_numbers algoritm/Tricky_number.c)
