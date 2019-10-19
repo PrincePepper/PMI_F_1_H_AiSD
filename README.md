@@ -7,4 +7,4 @@ Pmi_main_project
 1. [Telegram](https://tlgg.ru/princepepper)
 2. [Вконтакте](https://vk.com/princepepper)
 3. [Instargam](https://www.instagram.com/prince_pepper_official/?hl=ru)
-4. [Мой сайт](https://www.ppts.website/)(в разработке)
+4. [Мой сайт](http://www.ppts.website/)(в разработке)
