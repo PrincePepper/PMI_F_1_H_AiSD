@@ -14,5 +14,5 @@ add_executable(ideas LiMP/ideas.c)
 add_executable(finding "LiMP/ finding_vasya.c")
 add_executable(progressia algoritm/progressia.c)
 add_executable(chess algoritm/chess.c)
-
-add_executable(convert Long_int/convert.c Long_int/long_int.c)
+add_executable(tricky_numbers algoritm/Tricky_number.c)
+add_executable(prosto_podchet algoritm/prosto_podchet.c)
