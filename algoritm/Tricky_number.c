@@ -12,8 +12,8 @@ int compare(const void *x1, const void *x2) { //компаратор для со
 
 int main() {
 
-    FILE *fin = fopen("test09.in", "r");
-    FILE *fout = fopen("test09.out", "w");
+    FILE *fin = fopen("input.txt", "r");
+    FILE *fout = fopen("output.txt", "w");
 
     int amount_of_elements = 1;
 
@@ -91,7 +91,8 @@ int main() {
 
     for (int i = 0; i < amount_of_elements; i++) {
         if (main_mass[i] == two_main_mass[N] ||
-            (abs(array_right_to_left[i] - array_left_to_right[i]) == minimal_tricky_number && i != N)) {
+            (abs(array_right_to_left[i] - array_left_to_right[i]) == minimal_tricky_number &&
+             two_main_mass[i] != two_main_mass[N])) {
             fprintf(fout, "%d ", i + 1);
         }
     }

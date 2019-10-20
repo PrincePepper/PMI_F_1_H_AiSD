@@ -69,7 +69,7 @@ int main() {
 
     // Output data
     for (i = b.num_digits - 1; i >= 0; i--) {
-        fprintf(fout, "%c", digit2ch(b.digits[i]));
+        printf("%c", digit2ch(b.digits[i]));
     }
 
     fclose(fin);

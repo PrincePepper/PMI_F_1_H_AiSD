@@ -44,16 +44,35 @@ void add_LongInt(LongInt *a, const LongInt *b) {
     if (a->radix != b->radix)
         exit(1);
 
-    // TODO
+    int shift = 0;
+    for (int i = 0; i < (a->num_digits > b->num_digits ? a->num_digits : b->num_digits) || shift; i++) {
+        if (i == a->num_digits) {
+            a->digits[i] = 0;
+            a->num_digits++;
+        }
+
+        a->digits[i] += shift + (i < b->num_digits ? b->digits[i] : 0);
+        shift = a->digits[i] >= a->radix ? 1 : 0;
+        a->digits[i] = a->digits[i] - shift * a->radix;
+    }
 
 }
+
 
 void multiply_LongInt_int(LongInt *a, int c) {
     if (c == 0) {
         init_LongInt(a, 0);
         return;
     }
+    int shift = 0;
+    for (int i = 0; i < a->num_digits || shift; i++) {
+        if (i == a->num_digits) {
+            a->digits[i] = 0;
+            a->num_digits++;
+        }
 
-    // TODO
-
+        int temp = shift + a->digits[i] * c;
+        a->digits[i] = temp % a->radix;
+        shift = temp / a->radix;
+    }
 }

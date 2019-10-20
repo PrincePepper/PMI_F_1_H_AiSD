@@ -22,3 +22,4 @@ add_executable(prosto_podchet algoritm/prosto_podchet.c)
 add_executable(hod algoritm/HOD.c)
 
 add_executable(long_int Long_int/convert.c Long_int/long_int.c Long_int/long_int.h)
+add_executable(convert Long_int/main.c)
