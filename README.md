@@ -18,13 +18,14 @@ Pmi_main_project
 
 # ЯиМП:
 * [Брокер](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/broker.c)
-* [Точка в углу](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
-* [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)
-* [Забор по феншую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
-* [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
-* [Многократное суммирование](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/summa.c)
-# АиСД:
+* [Точка в углу](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/point_the_corner.c)
+* [Бада развешивает зоков](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/bada.c)
+* [Редактор уровней с грибами](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/mushroom_editor.c)
+* [Забор по фен-шую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
+* [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
+# АиСД:
+
 * [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 * [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)
 * [Забор по феншую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
