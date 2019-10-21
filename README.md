@@ -15,3 +15,11 @@ Pmi_main_project
 * [Руководство по стилю написания кода на С](https://cs50.readthedocs.io/style/c/)
 * [Книги по Java - языку](https://vk.com/proglib?w=wall-54530371_269329)
 * [Алгоритмы и структуры данных](https://mathmachine.github.io/wiki/algorithms.html)
+
+# ЯиМП:
+* [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
+* [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
+* [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)
+* [Забор по феншую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
+* [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
+* [Многократное суммирование](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/summa.c)
