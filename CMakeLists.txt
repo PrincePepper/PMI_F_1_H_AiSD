@@ -11,6 +11,7 @@ add_executable(grep LiMP/GREP.c)
 add_executable(fence LiMP/fence.c )
 add_executable(ideas LiMP/ideas.c)
 add_executable(finding "LiMP/ finding_vasya.c")
+add_executable(broker LiMP/broker.c)
 
 add_executable(povtor algoritm/povtor.c)
 add_executable(tree algoritm/tree.c)

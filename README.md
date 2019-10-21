@@ -17,6 +17,13 @@ Pmi_main_project
 * [Алгоритмы и структуры данных](https://mathmachine.github.io/wiki/algorithms.html)
 
 # ЯиМП:
+* [Брокер](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
+* [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
+* [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)
+* [Забор по феншую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
+* [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
+* [Многократное суммирование](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/summa.c)
+# АиСД:
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
 * [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 * [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)

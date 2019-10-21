@@ -16,29 +16,6 @@ int main() {
         mass2[i] = a;
     }
 
-//    for (int i = 0; i < index-1; i++) {
-//        if (i % 2 == 0) {
-//            while (mass[i] >= mass[i + 1]) {
-//                mass[i + 1]++;
-//                b1++;
-//            }
-//            while (mass2[i] <= mass2[i + 1]) {
-//                mass2[i]++;
-//                b2++;
-//            }
-//        } else {
-//            while (mass2[i] >= mass2[i + 1]) {
-//                mass2[i + 1]++;
-//                b2++;
-//            }
-//            while (mass[i] <= mass[i + 1]) {
-//                mass[i + 1]++;
-//                b1++;
-//            }
-//        }
-//    }
-
-
     for (int i = 0; i < index - 1; i += 2) {
         if (mass[i] < mass[i + 1] && mass[i + 1] > mass[i + 2]) {
         } else {
