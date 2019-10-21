@@ -14,17 +14,17 @@ add_executable(finding "LiMP/ finding_vasya.c")
 add_executable(ideas LiMP/ideas.c)
 add_executable(grep LiMP/GREP.c)
 
-
+add_executable(eggs algoritm/eggs.c)
 add_executable(summa algoritm/summa.c)
 add_executable(povtor algoritm/povtor.c)
 add_executable(tree algoritm/tree.c)
 add_executable(documents algoritm/documents.c)
 add_executable(progressia algoritm/progressia.c)
-add_executable(chess algoritm/chess.c)
+add_executable(hod algoritm/HOD.c)
+
 add_executable(tricky_numbers algoritm/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)
-add_executable(hod algoritm/HOD.c)
-add_executable(eggs algoritm/eggs.c)
+
 
 add_executable(long_int Long_int/convert.c Long_int/long_int.c Long_int/long_int.h)
 add_executable(convert Long_int/main.c)

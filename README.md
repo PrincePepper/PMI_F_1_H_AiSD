@@ -24,10 +24,17 @@ Pmi_main_project
 * [Забор по фен-шую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
 * [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
+* [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 # АиСД:
 
-* [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
-* [Марфа Генадевна и Яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/eggs.c)
-* [Забор по феншую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
-* [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
-* [Многократное суммирование](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/summa.c)
+* [Марфа Геннадьевна ест яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/eggs.c)
+* [Многократное суммирование](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/summa.c)
+* [Количество каждого числа](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/povtor.c)
+* [Деревья](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/tree.c)
+* [Марфа Геннадьевна и документы](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/documents.c)
+* [Арифметическая прогрессия](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/progressia.c)
+* [Перевод длинных чисел](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/)
+* [НОД и числа Фибоначчи (исправленная)](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/HOD.c)
+* [Хитрый член](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/Tricky_number.c)
+* [Просто посчитать](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/prosto_podchet.c)
+
