@@ -1,21 +1,33 @@
-//
-// Created by User on 20.10.2019.
-//
 #include <stdio.h>
+#include <string.h>
 
 #define  MAX_ELEMENT (1000)
 
-#include <string.h>
+FILE *fin;
 
 int main(int argc, char **argv) {
-    FILE *fin = fopen(argv[3], "r");
-    char a[MAX_ELEMENT];
 
+    //cd ./cmake-build-debug
+
+    char b = argv[argc - 2][0];
+    if (b == '-') {
+        printf("hello world");
+
+        //fin = stdin;
+    } else fin = fopen(argv[argc - 1], "r");
+
+    char a[MAX_ELEMENT];
+    /*for (int i = 1; i < argc - 2; i++) {
+        if (argv[argc - 2][0] == '-'){
+
+        }
+    }*/
     while (!feof(fin)) {
         fgets(a, MAX_ELEMENT, fin);
-        if (strstr(a, argv[2])) {
+        if (strstr(a, argv[argc - 2])) {
             printf("%s", a);
         }
     }
     printf("\n");
+    fclose(fin);
 }
