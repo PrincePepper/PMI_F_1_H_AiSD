@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-FILE *fin, *fout;
+
 
 
 int main() {
+    FILE *fin, *fout;
     fout = fopen("output.txt", "wt");
     fin = fopen("input.txt", "rt");
 

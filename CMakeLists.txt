@@ -12,6 +12,7 @@ add_executable(mushroom LiMP/mushroom_editor.c)
 add_executable(fence LiMP/fence.c )
 add_executable(finding "LiMP/ finding_vasya.c")
 add_executable(ideas LiMP/ideas.c)
+
 add_executable(grep LiMP/GREP.c)
 
 add_executable(eggs algoritm/eggs.c)
