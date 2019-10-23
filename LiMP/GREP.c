@@ -9,17 +9,22 @@ int main(int argc, char **argv) {
 
     //cd ./cmake-build-debug
 
-    char b = argv[argc - 2][0];
-    if (b == '-') {
-        printf("hello world");
-
-        //fin = stdin;
-    } else fin = fopen(argv[argc - 1], "r");
+    int chet = 2;
+    for (int i = 0; i < argc; i++) {
+        if (argv[i][0] == '-') {
+            if ((argv[i][0] == '-' && argv[i][1] == 'm')) {
+                chet += 2;
+            } else chet++;
+        }
+    }
+    if (chet == 2) {
+        fin = stdin;
+    } else fin = fopen(argv[chet], "r");
 
     int parametr = 0;
     int NUM = 0;
     int cal = 1;
-    for (cal; cal < argc - 2; cal++) {
+    for (; cal < argc - 2; cal++) {
         switch (argv[cal][1]) {
             case 'v':
                 parametr = 1;
@@ -39,17 +44,15 @@ int main(int argc, char **argv) {
                 parametr = 5;
                 break;
             default:
-                parametr = -1;
                 break;
         }
-        //printf("%d\n", parametr);
-        //printf("%d\n", NUM);
+
     }
 
     char stroke[MAX_ELEMENT];
-
-
+    int kol = 0;
     switch (parametr) {
+
         case 1:
             while (!feof(fin)) {
                 fgets(stroke, MAX_ELEMENT, fin);
@@ -58,6 +61,7 @@ int main(int argc, char **argv) {
                 }
             }
             break;
+
         case 2:
             while (!feof(fin)) {
                 fgets(stroke, MAX_ELEMENT, fin);
@@ -67,20 +71,46 @@ int main(int argc, char **argv) {
                 }
             }
             break;
+
         case 3:
-            while (!feof(fin)) {
-                fgets(stroke, MAX_ELEMENT, fin);
-                if (strstr(stroke, argv[cal])) {
-                    printf("%s", stroke);
+            for (int i = 0; i < argc - chet; i++) {
+                fin = fopen(argv[chet + i], "r");
+                while (!feof(fin)) {
+                    fgets(stroke, MAX_ELEMENT, fin);
+                    if (strstr(stroke, argv[chet - 1])) {
+                        printf("%s: %s", argv[chet + i], stroke);
+                    }
                 }
             }
             break;
-        case 4:
-            break;
-        case 5:
-            break;
-        default:
 
+        case 4:
+            for (int i = 0; i < argc - chet; i++) {
+                fin = fopen(argv[chet + i], "r");
+                while (!feof(fin)) {
+                    fgets(stroke, MAX_ELEMENT, fin);
+                    if (strstr(stroke, argv[chet - 1])) {
+                        printf("%s", stroke);
+                    }
+                }
+            }
+            break;
+
+        case 5:
+            for (int i = 0; i < argc - chet; i++) {
+                fin = fopen(argv[chet + i], "r");
+                while (!feof(fin)) {
+                    fgets(stroke, MAX_ELEMENT, fin);
+                    if (strstr(stroke, argv[chet - 1])) {
+                        kol++;
+                    }
+                }
+                printf("%s: %d\n", argv[chet + i], kol);
+                kol = 0;
+            }
+            break;
+
+        default:
             while (!feof(fin)) {
                 fgets(stroke, MAX_ELEMENT, fin);
                 if (strstr(stroke, argv[cal])) {
@@ -89,7 +119,6 @@ int main(int argc, char **argv) {
             }
             break;
     }
-
 
     printf("\n");
     fclose(fin);
