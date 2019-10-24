@@ -15,7 +15,13 @@ Pmi_main_project
 * [Руководство по стилю написания кода на С](https://cs50.readthedocs.io/style/c/)
 * [Книги по Java - языку](https://vk.com/proglib?w=wall-54530371_269329)
 * [Алгоритмы и структуры данных](https://mathmachine.github.io/wiki/algorithms.html)
+##### Репозитории хороших  людей:
+1. [Алексей Шуров](https://github.com/alexiskhb)
+2. [Александр Кленин](https://github.com/klenin)
 
+### Контесты с задачками:
+* [Б8119-01.03.02. Введение в алгоритмы](https://imcs.dvfu.ru/cats/main.pl?f=problems;cid=2628601;sid=PWKPnrQeENsnu1DJS8fO0etMRXbgu8)
+* [Б8119-01.03.02систпро. ЯиМП](https://imcs.dvfu.ru/cats/main.pl?f=problems;cid=2626592;sid=PWKPnrQeENsnu1DJS8fO0etMRXbgu8)
 # ЯиМП:
 * [Брокер](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/broker.c)
 * [Точка в углу](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/point_the_corner.c)
@@ -24,7 +30,7 @@ Pmi_main_project
 * [Забор по фен-шую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
 * [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
-* [GREP](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
+* [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 # АиСД:
 
 * [Марфа Геннадьевна ест яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/eggs.c)
