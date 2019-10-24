@@ -31,7 +31,7 @@ void print_main(char *input, FILE *A, int value_v, int value_H, int value_c, int
         fgets(stroke, MAX_ELEMENT, A);
         if (value_v == 0 && strstr(stroke, pattern)) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
-        } else if (!strstr(stroke, pattern)) {
+        } else if (value_v == 1 && !strstr(stroke, pattern)) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
         }
     }
