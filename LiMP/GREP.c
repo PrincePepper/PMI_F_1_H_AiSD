@@ -1,131 +1,122 @@
 #include <stdio.h>
 #include <string.h>
+#include <locale.h>
+
 //cd ./cmake-build-debug
+
 #define  MAX_ELEMENT (1000)
+char stroke[MAX_ELEMENT];
+char pattern[MAX_ELEMENT];
+
 FILE *fin;
 
+int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
+    kol++;
+    if ((value_H == 1) && (value_c == 0)) {
+        printf("%s:", input);
+    }
+    if (value_c == 0) {
+        printf("%s", stroke);
+    }
+    return kol;
+}
+
+
+void print_main(char *input, FILE *A, int value_v, int value_H, int value_c, int value_m, int NUM) {
+    int kol = 0;
+    while (!feof(A)) {
+        if (value_m == 1) {
+            if (kol == NUM) break;
+        }
+        fgets(stroke, MAX_ELEMENT, A);
+        if (value_v == 0) {
+            if (strstr(stroke, pattern)) {
+                kol = ValueCandValueH(input, value_H, value_c, kol);
+            }
+        }
+        if (value_v == 1) {
+            if (!strstr(stroke, pattern) && strstr(stroke, "\n")) {
+                kol = ValueCandValueH(input, value_H, value_c, kol);
+            }
+        }
+    }
+    if (value_H == 1 && value_c == 1) {
+        printf("%s:%d", input, kol);
+    } else if (value_c == 1) {
+        printf("%d\n", kol);
+    }
+}
+
+
 int main(int argc, char **argv) {
-    int parametr = 0;            // параметр на данный момент
-    int NUM = 0;                 // кол-во строк для параметра -m
-    int cal = 1;                 // кол-во параметров(сложно обьяснить)
-    char stroke[MAX_ELEMENT];    // массив 1 строки из файла
-    int kol = 0;                 // колличество строк встречающийся с патерном(используется для -c)
+
+    setlocale(LC_ALL, "Rus");
+    int NUM = 0; // кол-во строк для параметра -m
+    int value_v = 0;
+    int value_m = 0;
+    int value_H = 0;
+    int value_c = 0;
+
 //------------------------------------------------------------------------------------------------
     //подсчет колличесва параметров
 //------------------------------------------------------------------------------------------------
-    int chet = 2;
+    int koll_files = 2;
     for (int i = 0; i < argc; i++) {
         if (argv[i][0] == '-') {
             if ((argv[i][0] == '-' && argv[i][1] == 'm')) {
-                chet += 2;
-            } else chet++;
+                koll_files += 2;
+            } else koll_files++;
         }
     }
+
+    strcpy(pattern, argv[koll_files - 1]); // запись шаблона в pattern
+//------------------------------------------------------------------------------------------------
+    //проверка на присутствие файла и правильность его написания
+//------------------------------------------------------------------------------------------------
+    if (koll_files == 2) {
+        fin = stdin;
+    } else {
+        fin = fopen(argv[koll_files], "r");
+        if (!fin) {
+            printf("grep:%s: No such file or directory\n", argv[koll_files]);
+            return 0;
+        }
+    }
+
 //------------------------------------------------------------------------------------------------
     //определение какой на данный момент параметр
 //------------------------------------------------------------------------------------------------
-    for (; cal < argc - 2; cal++) {
+    for (int cal = 1; cal < koll_files - 1; cal++) {
         switch (argv[cal][1]) {
             case 'v':
-                parametr = 1;
+                value_v = 1;
                 break;
             case 'm':
-                parametr = 2;
-                NUM = argv[cal + 1][0];
+                value_m = 1;
+                NUM = argv[cal + 1][0] - 48;
                 cal++;
                 break;
             case 'H':
-                parametr = 3;
-                break;
-            case 'h':
-                parametr = 4;
+                value_H = 1;
                 break;
             case 'c':
-                parametr = 5;
+                value_c = 1;
                 break;
             default:
                 break;
         }
-
     }
+
 //------------------------------------------------------------------------------------------------
-    //проверка на присутствие файла
+    //работа главной части
 //------------------------------------------------------------------------------------------------
-    if (chet == 2) {
-        fin = stdin;
-    } else fin = fopen(argv[chet], "r");
-//------------------------------------------------------------------------------------------------
-    //распредение в зависимости какой у на параметр
-//------------------------------------------------------------------------------------------------
-    switch (parametr) {
-        case 1:
-            while (!feof(fin)) {
-                fgets(stroke, MAX_ELEMENT, fin);
-                if (!(strstr(stroke, argv[cal]))) {
-                    printf("%s", stroke);
-                }
-            }
-            break;
-
-        case 2:
-            while (!feof(fin)) {
-                fgets(stroke, MAX_ELEMENT, fin);
-                if (strstr(stroke, argv[cal]) && NUM > 48) {
-                    printf("%s", stroke);
-                    NUM--;
-                }
-            }
-            break;
-
-        case 3:
-            for (int i = 0; i < argc - chet; i++) {
-                fin = fopen(argv[chet + i], "r");
-                while (!feof(fin)) {
-                    fgets(stroke, MAX_ELEMENT, fin);
-                    if (strstr(stroke, argv[chet - 1])) {
-                        printf("%s: %s", argv[chet + i], stroke);
-                    }
-                }
-
-            }
-            break;
-
-        case 4:
-            for (int i = 0; i < argc - chet; i++) {
-                fin = fopen(argv[chet + i], "r");
-                while (!feof(fin)) {
-                    fgets(stroke, MAX_ELEMENT, fin);
-                    if (strstr(stroke, argv[chet - 1])) {
-                        printf("%s", stroke);
-                    }
-                }
-            }
-            break;
-
-        case 5:
-            for (int i = 0; i < argc - chet; i++) {
-                fin = fopen(argv[chet + i], "r");
-                while (!feof(fin)) {
-                    fgets(stroke, MAX_ELEMENT, fin);
-                    if (strstr(stroke, argv[chet - 1])) {
-                        kol++;
-                    }
-                }
-                printf("%s: %d\n", argv[chet + i], kol);
-                kol = 0;
-            }
-            break;
-
-        default:
-            while (!feof(fin)) {
-                fgets(stroke, MAX_ELEMENT, fin);
-                if (strstr(stroke, argv[cal])) {
-                    printf("%s", stroke);
-                }
-            }
-            break;
+    for (int i = 0; i < argc - koll_files; i++) {
+        fin = fopen(argv[koll_files + i], "r");
+        print_main(argv[koll_files + i], fin, value_v, value_H, value_c, value_m, NUM);
     }
+    fclose(fin);
 
     printf("\n");
     fclose(fin);
+    return 0;
 }
