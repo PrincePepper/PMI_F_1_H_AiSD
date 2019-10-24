@@ -29,17 +29,14 @@ void print_main(char *input, FILE *A, int value_v, int value_H, int value_c, int
             if (kol == NUM) break;
         }
         fgets(stroke, MAX_ELEMENT, A);
-        if (value_v == 0) {
-            if (strstr(stroke, pattern)) {
-                kol = ValueCandValueH(input, value_H, value_c, kol);
-            }
-        }
-        if (value_v == 1) {
-            if (!strstr(stroke, pattern) && strstr(stroke, "\n")) {
-                kol = ValueCandValueH(input, value_H, value_c, kol);
-            }
+        if (value_v == 0 && strstr(stroke, pattern)) {
+            kol = ValueCandValueH(input, value_H, value_c, kol);
+        } else if (!strstr(stroke, pattern)) {
+            kol = ValueCandValueH(input, value_H, value_c, kol);
         }
     }
+
+
     if (value_H == 1 && value_c == 1) {
         printf("%s:%d", input, kol);
     } else if (value_c == 1) {
