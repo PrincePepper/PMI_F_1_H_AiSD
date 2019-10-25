@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
+#include <io.h>
 
 //cd ./cmake-build-debug
 
@@ -22,16 +23,16 @@ int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
 }
 
 
-void print_main(char *input, FILE *A, int value_v, int value_H, int value_c, int value_m, int NUM) {
+void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, int value_m, int NUM) {
     int kol = 0;
-    while (!feof(A)) {
+    while (!feof(FILE)) {
         if (value_m == 1) {
             if (kol == NUM) break;
         }
-        fgets(stroke, MAX_ELEMENT, A);
+        fgets(stroke, MAX_ELEMENT, FILE);
         if (value_v == 0 && strstr(stroke, pattern)) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
-        } else if (value_v == 1 && !strstr(stroke, pattern) && (strstr(stroke, "\n"))) {
+        } else if (value_v == 1 && !strstr(stroke, pattern) && !(strstr(stroke, "\n"))) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
         }
     }
@@ -68,16 +69,22 @@ int main(int argc, char **argv) {
 
     strcpy(pattern, argv[koll_files - 1]); // запись шаблона в pattern
 //------------------------------------------------------------------------------------------------
-    //проверка на присутствие файла и правильность его написания
+    //проверка на присутствие файла и правильность его написания и на пустату файла
 //------------------------------------------------------------------------------------------------
     if (koll_files == 2) {
         fin = stdin;
     } else {
         fin = fopen(argv[koll_files], "r");
+
         if (!fin) {
             printf("grep:%s: No such file or directory\n", argv[koll_files]);
             return 0;
         }
+
+        fseek(fin, 0, SEEK_END);
+        long pos = ftell(fin);
+        if (pos > 0) {
+        } else printf("grep:%s: No such data\n", argv[koll_files]);
     }
 
 //------------------------------------------------------------------------------------------------
