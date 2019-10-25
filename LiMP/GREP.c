@@ -83,8 +83,10 @@ int main(int argc, char **argv) {
 
         fseek(fin, 0, SEEK_END);
         long pos = ftell(fin);
-        if (pos > 0) {
-        } else printf("grep:%s: No such data\n", argv[koll_files]);
+        if (pos <= 0) {
+            printf("grep:%s: No such data\n", argv[koll_files]);
+            return 0;
+        }
     }
 
 //------------------------------------------------------------------------------------------------
