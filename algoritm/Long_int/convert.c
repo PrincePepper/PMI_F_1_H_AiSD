@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 #include <strings.h>
 #include "long_int.h"
 
-#define MAX_STR_LEN 1001
-
-int ch2digit(char c) {
+int char2digit(char c) {
     if (c >= '0' && c <= '9')
         return c - '0';
     else if (c >= 'A' && c <= 'Z')
@@ -14,11 +12,11 @@ int ch2digit(char c) {
         return -1;
 }
 
-char digit2ch(int d) {
+char digit2char(int d) {
     if (d >= 0 && d <= 9)
-        return '0' + d;
+        return (char) ('0' + d);
     else if (d >= 10 && d <= 35)
-        return 'A' + d - 10;
+        return (char) ('A' + d - 10);
 }
 
 void convert(const LongInt *a, LongInt *x) {
@@ -47,29 +45,29 @@ int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
 
-    // Input data
+    // Входные данные
     int p, q;
-    char s[MAX_STR_LEN];
+    char s[MAX_NUM_DIGITS];
     fscanf(fin, "%d %d\n", &p, &q);
-    fgets(s, MAX_STR_LEN, fin);
+    fgets(s, MAX_NUM_DIGITS, fin);
     int len = strlen(s);
     if (s[len - 1] == '\n')
         len--;
 
-    // Initialize a long number
+    // Инициализировать длинные числа
     LongInt a = {p};
     a.num_digits = len;
     int i;
     for (i = 0; i < len; i++)
-        a.digits[len - 1 - i] = ch2digit(s[i]);
+        a.digits[len - 1 - i] = char2digit(s[i]);
 
-    // Convert the long number to another radix
+    // Преобразовать длинное число в другой систему счисления
     LongInt b = {q};
     convert(&a, &b);
 
-    // Output data
+    // Выходные данные
     for (i = b.num_digits - 1; i >= 0; i--) {
-        printf("%c", digit2ch(b.digits[i]));
+        fprintf(fout, "%c", digit2char(b.digits[i]));
     }
 
     fclose(fin);
