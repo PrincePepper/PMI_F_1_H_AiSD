@@ -18,4 +18,5 @@ int main() {
         count++;
     }
     fprintf(fout, "Words - %d", count);
+
 }

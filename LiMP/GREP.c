@@ -2,22 +2,25 @@
 #include <string.h>
 #include <locale.h>
 #include <io.h>
+#include <stdlib.h>
 
 //cd ./cmake-build-debug
-
+//printf("%s\n", "\033[0;31mbold red text\033[0m");
 #define  MAX_ELEMENT (1000)
 char stroke[MAX_ELEMENT];
 char pattern[MAX_ELEMENT];
 
 FILE *fin;
 
-int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
+int ValueCandValueH(char *input, int value_H, int value_c, int kol, long long int d) {
     kol++;
     if ((value_H == 1) && (value_c == 0)) {
-        printf("%s:", input);
+        printf("\033[36m%s\033[0m:", input);
+        //printf("%s:", input);
     }
     if (value_c == 0) {
         printf("%s", stroke);
+
     }
     return kol;
 }
@@ -30,18 +33,22 @@ void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, 
             if (kol == NUM) break;
         }
         fgets(stroke, MAX_ELEMENT, FILE);
-        if (value_v == 0 && strstr(stroke, pattern)) {
-            kol = ValueCandValueH(input, value_H, value_c, kol);
-        } else if (value_v == 1 && !strstr(stroke, pattern) && !strstr(stroke, "\n")) {
-            kol = ValueCandValueH(input, value_H, value_c, kol);
+        char *b = strstr(stroke, pattern);
+        long long int d = b - stroke;
+        if (value_v == 0 && b) {
+
+            kol = ValueCandValueH(input, value_H, value_c, kol, d);
+        } else if (value_v == 1 && !b && !strstr(stroke, "\n")) {
+            kol = ValueCandValueH(input, value_H, value_c, kol, d);
         }
     }
 
 
     if (value_H == 1 && value_c == 1) {
-        printf("%s:%d", input, kol);
+        printf("\033[0;36m%s\033[0m: ", input);
+        printf("\033[0;31m%d\033[0m\n", kol);
     } else if (value_c == 1) {
-        printf("%d\n", kol);
+        printf("\033[0;31m%d\033[0m", kol);
     }
 }
 
