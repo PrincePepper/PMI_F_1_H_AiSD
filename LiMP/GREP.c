@@ -32,7 +32,7 @@ void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, 
         fgets(stroke, MAX_ELEMENT, FILE);
         if (value_v == 0 && strstr(stroke, pattern)) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
-        } else if (value_v == 1 && !strstr(stroke, pattern) && !(strstr(stroke, "\n"))) {
+        } else if (value_v == 1 && !strstr(stroke, pattern) && !strstr(stroke, "\n")) {
             kol = ValueCandValueH(input, value_H, value_c, kol);
         }
     }
