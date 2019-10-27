@@ -35,8 +35,8 @@ void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, 
         fgets(stroke, MAX_ELEMENT, FILE);
         char *b = strstr(stroke, pattern);
         long long int d = b - stroke;
-        if (value_v == 0 && b) {
 
+        if (value_v == 0 && b) {
             kol = ValueCandValueH(input, value_H, value_c, kol, d);
         } else if (value_v == 1 && !b && !strstr(stroke, "\n")) {
             kol = ValueCandValueH(input, value_H, value_c, kol, d);
@@ -55,7 +55,7 @@ void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, 
 
 int main(int argc, char **argv) {
 
-    setlocale(LC_ALL, "Rus");
+    setlocale(LC_ALL, "ru_UA.UTF-8");
     int NUM = 0; // кол-во строк для параметра -m
     int value_v = 0;
     int value_m = 0;
