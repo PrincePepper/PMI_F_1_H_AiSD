@@ -15,6 +15,7 @@ add_executable(ideas LiMP/ideas.c)
 #   доп задания
 add_executable(count_string "LiMP/ count_string.c")
 add_executable(grep LiMP/GREP.c)
+add_executable(max_int LiMP/max_int.c)
 
 #   это все проги по АиСД
 add_executable(eggs algoritm/eggs.c)
