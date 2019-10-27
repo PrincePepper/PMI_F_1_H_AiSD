@@ -31,6 +31,8 @@ Pmi_main_project
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
 * [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
 * [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
+* [Максимум из чисел](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/max_int.c)
+* [Подсчет колличесва слов](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20count_string.c)
 # АиСД:
 
 * [Марфа Геннадьевна ест яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/eggs.c)
