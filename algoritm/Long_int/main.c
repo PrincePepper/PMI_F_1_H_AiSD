@@ -32,7 +32,7 @@ char digit2char(int d) {
 void init_LongInt(LongInt *a, int val) {
     int m = a->radix;
 
-    // is the radix positive ?
+    // is the count positive ?
     if (m <= 0)
         exit(1);
 

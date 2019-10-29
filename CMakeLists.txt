@@ -4,6 +4,7 @@ project(untitled C)
 set(CMAKE_C_STANDARD 99)
 #   здесь тестовый код
 add_executable(test test.c)
+
 #   это все проги по ЯиМП
 add_executable(broker LiMP/broker.c)
 add_executable(point_the_corner LiMP/point_the_corner.c)
