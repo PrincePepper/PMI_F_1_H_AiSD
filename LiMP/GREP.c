@@ -22,7 +22,7 @@ typedef struct {
 
 GREP grep;
 
-void CheakFileTrue(char *input) {
+void СheckFileTrue(char *input) {
 
     if (!grep.fin) {
         fprintf(stderr, "grep:%s: No such file or directory\n", input);
@@ -128,7 +128,7 @@ int main(int argc, char **argv) {
     } else {
         for (int i = 0; i < grep.number_files; i++) {
             grep.fin = fopen(argv[grep.name_file + i], "r");
-            CheakFileTrue(argv[grep.name_file + i]);
+            СheckFileTrue(argv[grep.name_file + i]);
             grep.fin = fopen(argv[grep.name_file + i], "r");
             PrintMain(argv[grep.name_file + i]);
             fclose(grep.fin);
