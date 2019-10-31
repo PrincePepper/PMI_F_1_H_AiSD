@@ -4,128 +4,134 @@
 #include <locale.h>
 
 //cd ./cmake-build-debug
+#define  MAX_ELEMENT 1000
 
-#define  MAX_ELEMENT (1000)
-char stroke[MAX_ELEMENT];
-char pattern[MAX_ELEMENT];
+typedef struct {
+    char stroke[MAX_ELEMENT];
+    char pattern[MAX_ELEMENT];
+    int NUM;
+    int key_v;
+    int key_m;
+    int key_H;
+    int key_c;
+    int number_files;
+    int name_file;
+    FILE *fin;
 
-void CheakFileTrue(char *input, FILE *fin) {
-    if (!fin) {
+} GREP;
+
+GREP grep;
+
+void CheakFileTrue(char *input) {
+
+    if (!grep.fin) {
         fprintf(stderr, "grep:%s: No such file or directory\n", input);
         exit(1);
     }
 
-    fseek(fin, 0, SEEK_END);
-    long pos = ftell(fin);
+    fseek(grep.fin, 0, SEEK_END);
+    long pos = ftell(grep.fin);
     if (pos <= 0) {
         fprintf(stderr, "grep:%s: No such data\n", input);
         exit(1);
     }
 }
 
-int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
+int ValueCandValueH(char *input, int kol) {
+
     kol++;
-    if ((value_H == 1) && (value_c == 0)) {
+    if ((grep.key_H == 1) && (grep.key_c == 0)) {
         printf("\033[36m%s\033[0m:", input);
     }
-    if (value_c == 0) {
-        printf("%s", stroke);
+    if (grep.key_c == 0) {
+        printf("%s", grep.stroke);
 
     }
     return kol;
 }
 
 
-void print_main(char *input, FILE *fin, int value_v, int value_H, int value_c, int value_m, int NUM) {
+void PrintMain(char *input) {
+
     int kol = 0;
-    while (!feof(fin)) {
 
-        if (value_m == 1) {
-            if (kol == NUM) break;
-        }
-        fgets(stroke, MAX_ELEMENT, fin);
-        char *b = strstr(stroke, pattern);
+    while (!feof(grep.fin)) {
 
-        if ((value_v == 0 && b) || (value_v == 1 && !b)) {
-            kol = ValueCandValueH(input, value_H, value_c, kol);
+        if (grep.key_m == 1 && kol == grep.NUM) {
+            break;
         }
+        fgets(grep.stroke, MAX_ELEMENT, grep.fin);
+        char *b = strstr(grep.stroke, grep.pattern);
+        if ((grep.key_v == 0 && b) || (grep.key_v == 1 && !b)) {
+            kol = ValueCandValueH(input, kol);
+        }
+
     }
 
-
-    if (value_H == 1 && value_c == 1) {
+    if (grep.key_H == 1 && grep.key_c == 1) {
+        printf("10\n");
         printf("\033[0;36m%s\033[0m: ", input);
         printf("\033[0;31m%d\033[0m\n", kol);
-    } else if (value_c == 1) {
+    } else if (grep.key_c == 1) {
         printf("\033[0;31m%d\033[0m", kol);
     }
 }
 
-
 int main(int argc, char **argv) {
-
     setlocale(LC_ALL, "ru_UA.UTF-8");
-    int NUM = 0; // кол-во строк для параметра -m
-    int key_v = 0;
-    int key_m = 0;
-    int key_H = 0;
-    int key_c = 0;
 
-//------------------------------------------------------------------------------------------------
-    //подсчет колличесва параметров
-//------------------------------------------------------------------------------------------------
-    int koll_files = argc - 2;
+    grep.key_c = 0;
+    grep.key_H = 0;
+    grep.key_v = 0;
+    grep.key_m = 0;
+    grep.NUM = 0;
+    grep.number_files = argc - 2;
+
     for (int i = 0; i < argc; i++) {
         if (argv[i][0] == '-') {
-            koll_files--;
+            grep.number_files--;
         }
     }
 
-    strcpy(pattern, argv[argc - koll_files - 1]); // запись шаблона в pattern
+    grep.name_file = argc - grep.number_files;
 
-//------------------------------------------------------------------------------------------------
-    //проверка на присутствие файла и правильность его написания и на пустату файла
-//------------------------------------------------------------------------------------------------
+    strcpy(grep.pattern, argv[grep.name_file - 1]); // запись шаблона в pattern
 
-
-//------------------------------------------------------------------------------------------------
-    //определение какой на данный момент параметр
-//------------------------------------------------------------------------------------------------
     for (int cal = 1; cal < argc; cal++) {
         switch (argv[cal][1]) {
             case 'v':
-                key_v = 1;
+                grep.key_v = 1;
                 break;
             case 'm':
-                key_m = 1;
-                NUM = argv[cal + 1][0] - 48;
+                grep.key_m = 1;
+                grep.NUM = argv[cal + 1][0] - 48;
                 cal++;
                 break;
             case 'H':
-                key_H = 1;
+                grep.key_H = 1;
                 break;
             case 'c':
-                key_c = 1;
+                grep.key_c = 1;
                 break;
             default:
                 break;
         }
     }
-    //printf("%d %d %d %d \n", key_v, key_m, key_H, key_c);
-//------------------------------------------------------------------------------------------------
-    //работа главной части
-//------------------------------------------------------------------------------------------------
-    FILE *fin;
-    if (koll_files == 0) {
-        fin = stdin;
-        print_main("(stardart input)", fin, key_v, key_H, key_c, key_m, NUM);
-    } else {
-        for (int i = 0; i < koll_files; i++) {
-            fin = fopen(argv[argc - koll_files + i], "r");
 
-            CheakFileTrue(argv[argc - koll_files + i], fin);
-            fin = fopen(argv[argc - koll_files + i], "r");
-            print_main(argv[argc - koll_files + i], fin, key_v, key_H, key_c, key_m, NUM);
-            fclose(fin);
+    /*printf("%d %d %d %d %d\n", grep.key_v, grep.key_m, grep.key_H, grep.key_c, grep.NUM);
+    printf("%d %s %s\n", grep.name_file, argv[grep.name_file], argv[grep.name_file - 1]);
+    printf("%s \n", grep.pattern);*/
+
+    if (grep.number_files == 0) {
+        grep.fin = stdin;
+        PrintMain("(stardart input)");
+    } else {
+        for (int i = 0; i < grep.number_files; i++) {
+            grep.fin = fopen(argv[grep.name_file + i], "r");
+            CheakFileTrue(argv[grep.name_file + i]);
+            grep.fin = fopen(argv[grep.name_file + i], "r");
+            PrintMain(argv[grep.name_file + i]);
+            fclose(grep.fin);
         }
 
     }
