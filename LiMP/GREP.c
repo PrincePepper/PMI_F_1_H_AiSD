@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <locale.h>
 
@@ -8,12 +9,24 @@
 char stroke[MAX_ELEMENT];
 char pattern[MAX_ELEMENT];
 
+void CheakFileTrue(char *input, FILE *fin) {
+    if (!fin) {
+        fprintf(stderr, "grep:%s: No such file or directory\n", input);
+        exit(1);
+    }
+
+    fseek(fin, 0, SEEK_END);
+    long pos = ftell(fin);
+    if (pos <= 0) {
+        fprintf(stderr, "grep:%s: No such data\n", input);
+        exit(1);
+    }
+}
 
 int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
     kol++;
     if ((value_H == 1) && (value_c == 0)) {
         printf("\033[36m%s\033[0m:", input);
-        //printf("%s:", input);
     }
     if (value_c == 0) {
         printf("%s", stroke);
@@ -26,6 +39,7 @@ int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
 void print_main(char *input, FILE *fin, int value_v, int value_H, int value_c, int value_m, int NUM) {
     int kol = 0;
     while (!feof(fin)) {
+
         if (value_m == 1) {
             if (kol == NUM) break;
         }
@@ -65,7 +79,9 @@ int main(int argc, char **argv) {
             koll_files--;
         }
     }
+
     strcpy(pattern, argv[argc - koll_files - 1]); // запись шаблона в pattern
+
 //------------------------------------------------------------------------------------------------
     //проверка на присутствие файла и правильность его написания и на пустату файла
 //------------------------------------------------------------------------------------------------
@@ -94,7 +110,7 @@ int main(int argc, char **argv) {
                 break;
         }
     }
-    printf("%d %d %d %d \n", key_v, key_m, key_H, key_c);
+    //printf("%d %d %d %d \n", key_v, key_m, key_H, key_c);
 //------------------------------------------------------------------------------------------------
     //работа главной части
 //------------------------------------------------------------------------------------------------
@@ -106,21 +122,12 @@ int main(int argc, char **argv) {
         for (int i = 0; i < koll_files; i++) {
             fin = fopen(argv[argc - koll_files + i], "r");
 
-            if (!fin) {
-                printf("grep:%s: No such file or directory\n", argv[argc - koll_files + i]);
-                return 0;
-            }
-
-            fseek(fin, 0, SEEK_END);
-            long pos = ftell(fin);
-            if (pos <= 0) {
-                printf("grep:%s: No such data\n", argv[argc - koll_files + i]);
-                return 0;
-            }
-
+            CheakFileTrue(argv[argc - koll_files + i], fin);
+            fin = fopen(argv[argc - koll_files + i], "r");
             print_main(argv[argc - koll_files + i], fin, key_v, key_H, key_c, key_m, NUM);
+            fclose(fin);
         }
-        fclose(fin);
+
     }
     return 0;
 }
