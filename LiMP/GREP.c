@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include <io.h>
-#include <stdlib.h>
 
 //cd ./cmake-build-debug
-//printf("%s\n", "\033[0;31mbold red text\033[0m");
+
 #define  MAX_ELEMENT (1000)
 char stroke[MAX_ELEMENT];
 char pattern[MAX_ELEMENT];
 
-FILE *fin;
 
-int ValueCandValueH(char *input, int value_H, int value_c, int kol, long long int d) {
+int ValueCandValueH(char *input, int value_H, int value_c, int kol) {
     kol++;
     if ((value_H == 1) && (value_c == 0)) {
         printf("\033[36m%s\033[0m:", input);
@@ -26,20 +23,17 @@ int ValueCandValueH(char *input, int value_H, int value_c, int kol, long long in
 }
 
 
-void print_main(char *input, FILE *FILE, int value_v, int value_H, int value_c, int value_m, int NUM) {
+void print_main(char *input, FILE *fin, int value_v, int value_H, int value_c, int value_m, int NUM) {
     int kol = 0;
-    while (!feof(FILE)) {
+    while (!feof(fin)) {
         if (value_m == 1) {
             if (kol == NUM) break;
         }
-        fgets(stroke, MAX_ELEMENT, FILE);
+        fgets(stroke, MAX_ELEMENT, fin);
         char *b = strstr(stroke, pattern);
-        long long int d = b - stroke;
 
-        if (value_v == 0 && b) {
-            kol = ValueCandValueH(input, value_H, value_c, kol, d);
-        } else if (value_v == 1 && !b && !strstr(stroke, "\n")) {
-            kol = ValueCandValueH(input, value_H, value_c, kol, d);
+        if ((value_v == 0 && b) || (value_v == 1 && !b)) {
+            kol = ValueCandValueH(input, value_H, value_c, kol);
         }
     }
 
@@ -57,79 +51,76 @@ int main(int argc, char **argv) {
 
     setlocale(LC_ALL, "ru_UA.UTF-8");
     int NUM = 0; // кол-во строк для параметра -m
-    int value_v = 0;
-    int value_m = 0;
-    int value_H = 0;
-    int value_c = 0;
+    int key_v = 0;
+    int key_m = 0;
+    int key_H = 0;
+    int key_c = 0;
 
 //------------------------------------------------------------------------------------------------
     //подсчет колличесва параметров
 //------------------------------------------------------------------------------------------------
-    int koll_files = 2;
+    int koll_files = argc - 2;
     for (int i = 0; i < argc; i++) {
         if (argv[i][0] == '-') {
-            if ((argv[i][0] == '-' && argv[i][1] == 'm')) {
-                koll_files += 2;
-            } else koll_files++;
+            koll_files--;
         }
     }
-
-    strcpy(pattern, argv[koll_files - 1]); // запись шаблона в pattern
+    strcpy(pattern, argv[argc - koll_files - 1]); // запись шаблона в pattern
 //------------------------------------------------------------------------------------------------
     //проверка на присутствие файла и правильность его написания и на пустату файла
 //------------------------------------------------------------------------------------------------
-    if (koll_files == 2) {
-        fin = stdin;
-    } else {
-        fin = fopen(argv[koll_files], "r");
 
-        if (!fin) {
-            printf("grep:%s: No such file or directory\n", argv[koll_files]);
-            return 0;
-        }
-
-        fseek(fin, 0, SEEK_END);
-        long pos = ftell(fin);
-        if (pos <= 0) {
-            printf("grep:%s: No such data\n", argv[koll_files]);
-            return 0;
-        }
-    }
 
 //------------------------------------------------------------------------------------------------
     //определение какой на данный момент параметр
 //------------------------------------------------------------------------------------------------
-    for (int cal = 1; cal < koll_files - 1; cal++) {
+    for (int cal = 1; cal < argc; cal++) {
         switch (argv[cal][1]) {
             case 'v':
-                value_v = 1;
+                key_v = 1;
                 break;
             case 'm':
-                value_m = 1;
+                key_m = 1;
                 NUM = argv[cal + 1][0] - 48;
                 cal++;
                 break;
             case 'H':
-                value_H = 1;
+                key_H = 1;
                 break;
             case 'c':
-                value_c = 1;
+                key_c = 1;
                 break;
             default:
                 break;
         }
     }
-
+    printf("%d %d %d %d \n", key_v, key_m, key_H, key_c);
 //------------------------------------------------------------------------------------------------
     //работа главной части
 //------------------------------------------------------------------------------------------------
-    for (int i = 0; i < argc - koll_files; i++) {
-        fin = fopen(argv[koll_files + i], "r");
-        print_main(argv[koll_files + i], fin, value_v, value_H, value_c, value_m, NUM);
-    }
-    fclose(fin);
+    FILE *fin;
+    if (koll_files == 0) {
+        fin = stdin;
+        print_main("(stardart input)", fin, key_v, key_H, key_c, key_m, NUM);
+    } else {
+        for (int i = 0; i < koll_files; i++) {
+            fin = fopen(argv[argc - koll_files + i], "r");
 
-    printf("\n");
-    fclose(fin);
+            if (!fin) {
+                printf("grep:%s: No such file or directory\n", argv[argc - koll_files + i]);
+                return 0;
+            }
+
+            fseek(fin, 0, SEEK_END);
+            long pos = ftell(fin);
+            if (pos <= 0) {
+                printf("grep:%s: No such data\n", argv[argc - koll_files + i]);
+                return 0;
+            }
+
+            print_main(argv[argc - koll_files + i], fin, key_v, key_H, key_c, key_m, NUM);
+        }
+        fclose(fin);
+    }
     return 0;
 }

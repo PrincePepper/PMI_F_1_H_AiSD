@@ -22,40 +22,6 @@ int char2digit(char c) {
         return -1;
 }
 
-
-void init_LongInt(LongInt *a, int val) {
-    int m = a->count;
-
-    // is the count positive ?
-    if (m <= 0)
-        exit(1);
-
-    if (val == 0) {
-        a->num_digits = 1;
-        a->digits[0] = 0;
-        return;
-    }
-
-    int i = 0;
-    int b = val;
-    while (b > 0) {
-        a->digits[i++] = b % m;
-        b = b / m;
-    }
-    a->num_digits = i;
-}
-
-void copy_LongInt(LongInt *a, const LongInt *b) {
-    // are the radixes equal ?
-    if (a->count != b->count)
-        exit(1);
-
-    a->num_digits = b->num_digits;
-    int i;
-    for (i = 0; i < b->num_digits; i++)
-        a->digits[i] = b->digits[i];
-}
-
 void add_LongInt(LongInt *a, const LongInt *b) {
 
     int shift = 0;
@@ -81,7 +47,14 @@ int main() {
     FILE *fout = fopen("output.txt", "w");
     int N, K;
     fscanf(fin, "%d %d\n", &N, &K);
+    char s[MAX_NUM_DIGITS];
+    fgets(s, MAX_NUM_DIGITS, fin);
+    int len = strlen(s);
+    if (s[len - 1] == '\n')
+        len--;
+
     LongInt FIB[201];
+    FIB->num_digits = len;
 
     FIB->digits[0] = 0;
     FIB->digits[1] = 1;
