@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
+int compare(const void *x2, const void *x1) {
+    return (*(int *) x2 - *(int *) x1);
+}
+
+int bpos[100] = {0};
+int pos[100] = {0};
 int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
     int N;
     fscanf(fin, "%d", &N);
 
-    int mass[N];
-    int mass2[N];
+    int a[N];
+
     for (int i = 0; i < N; i++) {
-        fscanf(fin, "%d", &mass[i]);
+        fscanf(fin, "%d", &a[i]);
     }
-    int a = 0;
-    mass2[1] = 1;
-    for (int i = 0; i < N; i++) {
-        for (int j = i + 1; j < N; j++) {
-            int k = j;
-            int m = 2;
-        }
-    }
+
 }
