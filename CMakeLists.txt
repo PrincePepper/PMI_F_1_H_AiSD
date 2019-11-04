@@ -26,6 +26,7 @@ add_executable(tree algoritm/tree.c)
 add_executable(documents algoritm/documents.c)
 add_executable(progressia algoritm/progressia.c)
 add_executable(hod algoritm/HOD.c)
+add_executable(factorial algoritm/factorial.c)
 #   доп задания
 add_executable(tricky_numbers algoritm/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)

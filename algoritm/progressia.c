@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
+
 
 int compare(const void *x2, const void *x1) {
     return (*(int *) x2 - *(int *) x1);
