@@ -13,52 +13,42 @@ int main() {
     fscanf(fin, "%d", &N);
 
     int mass[N];
-    int mass2[N];
     for (int i = 0; i < N; i++) {
         fscanf(fin, "%d", &mass[i]);
-        mass2[i] = 0;
     }
+
     int d = 0;
     int value = 0;
-    int value2 = 0;
-    int b = 0;
-    int c = 0;
-    int j2 = 0;
-    int i2 = 0;
-    for (int i = 0; i < N - 1; i++) {
+    int a = 0;
+    int value2 = 0, j2 = 0, i2 = 0, d2 = 0;
+
+    for (int i = 0; i < N; i++) {
         for (int j = i + 1; j < N; j++) {
             d = abs(mass[j] - mass[i]);
-            int a = mass[j];
+            a = mass[j];
             for (int g = j + 1; g < N; g++) {
-                if (abs(a - mass[g]) == d) {
+                if (mass[g] - a == d) {
                     a = mass[g];
                     value++;
                 }
             }
             if (value > value2) {
                 value2 = value;
-                b = a;
-                c = d;
+                i2 = i;
                 j2 = j;
-                mass2[0] = i + 1;
-                mass2[1] = j + 1;
+                d2 = d;
             }
             value = 0;
-
         }
     }
-
     fprintf(fout, "%d\n", value2 + 2);
-    int i = 2;
+    fprintf(fout, "%d ", i2 + 1);
+    fprintf(fout, "%d ", j2 + 1);
+    int aaa = mass[j2];
     for (int g = j2 + 1; g < N; g++) {
-        if (abs(b - mass[g]) == c) {
-            b = mass[g];
-            mass2[i] = g + 1;
-            i++;
+        if (mass[g] - aaa == d2) {
+            aaa = mass[g];
+            fprintf(fout, "%d ", g + 1);
         }
-    }
-    qsort(mass2, N, sizeof(int), compare);
-    for (i = 0; i < N; i++) {
-        if (mass2[i] != 0) fprintf(fout, "%d ", mass2[i]);
     }
 }
