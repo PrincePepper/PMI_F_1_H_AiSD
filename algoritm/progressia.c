@@ -41,9 +41,9 @@ int main() {
             value = 0;
         }
     }
-    fprintf(fout, "%d\n", value2 + 2);
-    fprintf(fout, "%d ", i2 + 1);
-    fprintf(fout, "%d ", j2 + 1);
+    fprintf(fout, "%d\n", value2 + 2);//количество всего чисел
+    fprintf(fout, "%d ", i2 + 1);// 1 элемент
+    fprintf(fout, "%d ", j2 + 1);// 2 элемент
     int aaa = mass[j2];
     for (int g = j2 + 1; g < N; g++) {
         if (mass[g] - aaa == d2) {
