@@ -32,7 +32,7 @@ int main() {
                     value++;
                 }
             }
-            if (value > value2) {
+            if (value >= value2) {
                 value2 = value;
                 i2 = i;
                 j2 = j;
