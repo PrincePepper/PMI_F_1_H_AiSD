@@ -63,7 +63,12 @@ Pmi_main_project
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 # Дополнительные задания:
 1. [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 2. [Максимум из чисел](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/max_int.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 3. [Подсчет колличесва слов](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20count_string.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 4. [Хитрый член](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/Tricky_number.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 5. [Просто посчитать](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/prosto_podchet.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
