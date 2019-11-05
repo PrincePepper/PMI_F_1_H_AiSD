@@ -2,10 +2,6 @@
 #include <math.h>
 
 
-int compare(const void *x2, const void *x1) {
-    return (*(int *) x2 - *(int *) x1);
-}
-
 int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
