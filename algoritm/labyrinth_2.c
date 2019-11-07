@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-#define FALSE 0
-#define TRUE 1
-
 typedef struct {
     char WALL;
     char BLANK;
@@ -10,8 +7,10 @@ typedef struct {
     int H_grid;
     int len;
 } GRID;
-
 GRID grid;
+
+#define FALSE 0
+#define TRUE 1
 
 void display_maze(char (*maze)[grid.W_grid]) {
     int i;
@@ -20,15 +19,26 @@ void display_maze(char (*maze)[grid.W_grid]) {
             if (maze[i][j] == '+') grid.len++;
 }
 
+void display_maze2(char (*maze)[grid.W_grid]) {
+    int i;
+    for (i = 0; i < grid.H_grid; i++) {
+        for (int j = 0; j < grid.H_grid; j++)
+            printf("%c", maze[i][j]);
+        printf("\n");
+    }
+
+
+}
+
 int find_path(int x, int y, char (*maze)[grid.W_grid]) {
     // Если x, y находится вне лабиринта, верните false.
     if (x < 0 || x > grid.W_grid - 1 || y < 0 || y > grid.H_grid - 1) return FALSE;
 
     // Если x, y - цель, верните true.
-    if (maze[y][x] == '.' && x == grid.W_grid - 1 && y == grid.W_grid - 1) return TRUE;
+    if (maze[y][x] == 'F') return TRUE;
 
     // Если x, y не открыт, верните false.
-    if (maze[y][x] != grid.BLANK) {
+    if (maze[y][x] != grid.BLANK && maze[y][x] != 'S') {
         return FALSE;
     }
 
@@ -70,17 +80,26 @@ int main() {
     FILE *fout = fopen("output.txt", "w");
 
     fscanf(fin, "%d", &grid.H_grid);
-
-    char grid_mass[grid.H_grid][grid.W_grid];
     grid.W_grid = grid.H_grid;
+    char grid_mass[grid.H_grid][grid.W_grid];
+
     for (int i = 0; i < grid.H_grid; i++) {
         fscanf(fin, "%s", grid_mass[i]);
     }
+    if (grid_mass[grid.H_grid - 1][grid.W_grid - 1] == '.')
+        grid_mass[grid.H_grid - 1][grid.W_grid - 1] = 'F';
+    if (grid_mass[0][0] == '.') {
+        grid_mass[0][0] = 'S';
+    } else {
+        fprintf(fout, "-1");
+        return 0;
+    }
 
+    display_maze2(grid_mass);
     if (find_path(0, 0, grid_mass) == TRUE) {
         display_maze(grid_mass);
-        fprintf(fout, "%d\n", grid.len);
-        //printf("YES\n");
+        //display_maze2(grid_mass);
+        fprintf(fout, "%d", grid.len);
     } else
-        fprintf(fout, "-1\n");
+        fprintf(fout, "-1");
 }

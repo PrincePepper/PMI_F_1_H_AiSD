@@ -52,15 +52,17 @@ Pmi_main_project
 * [Арифметическая прогрессия](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/progressia.c)
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 * [Перевод длинных чисел](https://github.com/PrincePepper/pmi_main_project/tree/master/algoritm/Long_int) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) - файл ***`main.c`*** является решением, остальные файлы(__`convert.c`, `long_int.c`, `long_int.c`__) являются библиотекой длинных чисел
-
 * [НОД и числа Фибоначчи (исправленная)](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/HOD.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [Лабиринт 1](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/labyrinth_1.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [Лабиринт 2](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/labyrinth_2.c)
-![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 * [Digitalization](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/factorial.c)
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+* [Пешки Глущенко](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/glushchenko_pawns.c)
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
+
 # Дополнительные задания:
 1. [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
@@ -68,7 +70,7 @@ Pmi_main_project
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 3. [Подсчет колличесва слов](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20count_string.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
-4. [Хитрый член](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/Tricky_number.c)
+4. [Хитрый член](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/TrickyNumber/Tricky_number.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 5. [Просто посчитать](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/prosto_podchet.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)

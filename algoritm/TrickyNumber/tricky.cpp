@@ -1,42 +1,29 @@
-//
-// Created by User on 19.10.2019.
-//
-#include <stdio.h>
-#include <stdlib.h>
+/*
+Задача "Хитрый член"
+*/
 
+#include <cmath>
 
+/*
+Вход :
+    n - длина последовательности (n >= 1)
+    a[0..n-1] - последовательность натуральных чисел
+Выход :
+    m - длина последовательности "хитрых" индексов
+    tricky_indices[0..m-1] - последовательность "хитрых" индексов
+      (индексы от 1 до n)
+*/
 int compare(const void *x1, const void *x2) { //компаратор для сортировки массива
     return (*(int *) x1 - *(int *) x2);
 }
 
-
-int main() {
-
-    FILE *fin = fopen("input.txt", "r");
-    FILE *fout = fopen("output.txt", "w");
-
-    int amount_of_elements = 1;
-
-    fscanf(fin, "%d", &amount_of_elements);
-
-    int main_mass[amount_of_elements];
+void get_tricky_numbers(int amount_of_elements, const int main_mass[], int *m, int tricky_indices[]) {
+    int a = 0;
     int two_main_mass[amount_of_elements];
-
-
-    int count = 0, a = 0;
-    fscanf(fin, "%d", &a);
-    main_mass[0] = a;
-    two_main_mass[0] = a;
-    for (int i = 1; i < amount_of_elements; i++) {
-        fscanf(fin, "%d", &a);
-
-        main_mass[i] = a;
-        two_main_mass[i] = a;
-
-        if (main_mass[0] == main_mass[i]) {
-            count++;
-        }
+    for (int i = 0; i < amount_of_elements; i++) {
+        two_main_mass[i] = main_mass[i];
     }
+
     qsort(two_main_mass, amount_of_elements, sizeof(int), compare);
 
     int array_sums_ascend[amount_of_elements];
@@ -82,18 +69,26 @@ int main() {
         }
     }
     int N = 0;
+    int N2 = -1;
     for (int i = 0; i < amount_of_elements; i++) {
         if (abs(array_right_to_left[i] - array_left_to_right[i]) < minimal_tricky_number) {
-            minimal_tricky_number = (array_right_to_left[i] - array_left_to_right[i]);
+            minimal_tricky_number = abs(array_right_to_left[i] - array_left_to_right[i]);
             N = i;
+        }
+    }
+    for (int i = 0; i < amount_of_elements; i++) {
+        if (abs(array_right_to_left[i] - array_left_to_right[i]) == minimal_tricky_number) {
+            N2 = i;
         }
     }
 
     for (int i = 0; i < amount_of_elements; i++) {
-        if (main_mass[i] == two_main_mass[N] ||
-            (abs(array_right_to_left[i] - array_left_to_right[i]) == minimal_tricky_number &&
-             two_main_mass[i] != two_main_mass[N])) {
-            fprintf(fout, "%d ", i + 1);
+        if (main_mass[i] == two_main_mass[N] || (main_mass[i] == two_main_mass[N2] && N2 != -1)) {
+            //fprintf(fout, "%d ", i + 1);
+            tricky_indices[a] = i + 1;
+            a++;
         }
     }
+
+    *m = a;
 }

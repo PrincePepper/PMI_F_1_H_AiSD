@@ -29,9 +29,17 @@ add_executable(hod algoritm/HOD.c)
 add_executable(factorial algoritm/factorial.c)
 add_executable(labyrinth_2 algoritm/labyrinth_2.c)
 add_executable(labyrinth_1 algoritm/labyrinth_1.c)
+add_executable(glushchenko_pawns algoritm/glushchenko_pawns.c)
 #   доп задания
-add_executable(tricky_numbers algoritm/Tricky_number.c)
+add_executable(tricky_numbers algoritm/TrickyNumber/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)
 #   библиотека длинных чисел
 add_executable(Long_int algoritm/Long_int/convert.c algoritm/Long_int/long_int.c algoritm/Long_int/long_int.h)
 add_executable(convert algoritm/Long_int/main.c)
+
+
+#   хитрый член на С++
+cmake_minimum_required(VERSION 3.15)
+project(test)
+set(CMAKE_CXX_STANDARD 98)
+add_executable(test2 algoritm/TrickyNumber/tricky.cpp algoritm/TrickyNumber/run_tricky.cpp)
