@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <math.h>
+
+#include <string.h>
 
 
 int main() {
@@ -7,44 +8,46 @@ int main() {
     FILE *fout = fopen("output.txt", "w");
     int N;
     fscanf(fin, "%d", &N);
-
+    N++;
     int mass[N];
-    for (int i = 0; i < N; i++) {
+    int mass2[101] = {0};
+    int mass3[101] = {0};
+
+    for (int i = 1; i < N; i++) {
         fscanf(fin, "%d", &mass[i]);
     }
 
     int d = 0;
     int value = 0;
     int a = 0;
-    int value2 = 0, j2 = 0, i2 = 0, d2 = 0;
+    int value2 = 0;
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 1; i < N; i++) {
         for (int j = i + 1; j < N; j++) {
-            d = abs(mass[j] - mass[i]);
-            a = mass[j];
-            for (int g = j + 1; g < N; g++) {
-                if (mass[g] - a == d) {
+            d = mass[i] - mass[j];
+            a = mass[i];
+
+            for (int g = i + 1; g < N; g++) {
+
+                if (a - mass[g] == d) {
+                    mass2[i] = mass[i];
+                    mass2[g] = mass[g];
                     a = mass[g];
                     value++;
                 }
             }
-            if (value >= value2) {
+            if (value > value2) {
+                memcpy(mass3, mass2, 4 * N);
                 value2 = value;
-                i2 = i;
-                j2 = j;
-                d2 = d;
             }
             value = 0;
+            memset(mass2, 0, 404);
         }
     }
-    fprintf(fout, "%d\n", value2 + 2);//количество всего чисел
-    fprintf(fout, "%d ", i2 + 1);// 1 элемент
-    fprintf(fout, "%d ", j2 + 1);// 2 элемент
-    int aaa = mass[j2];
-    for (int g = j2 + 1; g < N; g++) {
-        if (mass[g] - aaa == d2) {
-            aaa = mass[g];
-            fprintf(fout, "%d ", g + 1);
+    fprintf(fout, "%d\n", ++value2);
+    for (int i = 0; i < N; i++) {
+        if (mass3[i] != 0) {
+            fprintf(fout, "%d ", i);
         }
     }
 }
