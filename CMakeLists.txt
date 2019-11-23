@@ -31,6 +31,8 @@ add_executable(factorial algoritm/factorial.c)
 add_executable(labyrinth_2 algoritm/labyrinth_2.c)
 add_executable(labyrinth_1 algoritm/labyrinth_1.c)
 add_executable(glushchenko_pawns algoritm/glushchenko_pawns.c)
+add_executable(newyear algoritm/NewYear.c)
+add_executable(knitting_cude algoritm/knitting_cube.c)
 #   доп задания
 add_executable(tricky_numbers algoritm/TrickyNumber/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)

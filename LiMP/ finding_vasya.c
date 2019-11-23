@@ -54,9 +54,4 @@ int main() {
     } else {
         fprintf(fout, "%d", count2);
     }
-
 }
-
-
-
-
