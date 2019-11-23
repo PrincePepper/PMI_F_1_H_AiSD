@@ -62,6 +62,12 @@ Pmi_main_project
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 * [Пешки Глущенко](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/glushchenko_pawns.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+* [В ожидании Нового года](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/NewYear.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+* [Куб со спицами](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/knitting_cube.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+* [Отгадай слово](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/guess_word.c)
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 
 # Дополнительные задания:
 1. [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)

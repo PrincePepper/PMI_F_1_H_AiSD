@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/User/CLionProjects/pmi_main_project/algoritm/TrickyNumber/run_tricky.cpp
+iostream
+-
+fstream
+-
+
+C:/Users/User/CLionProjects/pmi_main_project/algoritm/TrickyNumber/tricky.cpp
+cmath
+-
+

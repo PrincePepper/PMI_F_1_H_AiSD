@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/User/CLionProjects/pmi_main_project/Long_int/convert.c
+stdio.h
+-
+stdlib.h
+-
+strings.h
+-
+long_int.h
+C:/Users/User/CLionProjects/pmi_main_project/Long_int/long_int.h
+
+C:/Users/User/CLionProjects/pmi_main_project/Long_int/long_int.c
+stdlib.h
+-
+long_int.h
+C:/Users/User/CLionProjects/pmi_main_project/Long_int/long_int.h
+
+C:/Users/User/CLionProjects/pmi_main_project/Long_int/long_int.h
+

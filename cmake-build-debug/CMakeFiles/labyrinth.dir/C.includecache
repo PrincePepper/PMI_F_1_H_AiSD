@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/User/CLionProjects/pmi_main_project/algoritm/labyrinth.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+conio.h
+-
+time.h
+-
+dos.h
+-
+windows.h
+-
+
