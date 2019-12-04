@@ -1,9 +1,5 @@
-//
-// Created by User on 21.10.2019.
-//
 #include <stdio.h>
 #include <string.h>
-
 int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");

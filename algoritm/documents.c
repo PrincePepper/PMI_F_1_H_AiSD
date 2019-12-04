@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-
-
-
 int main() {
     FILE *fin, *fout;
     fout = fopen("output.txt", "wt");

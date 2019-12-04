@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-#define MAX_NUM_DIGITS 10000
+#define MAX_NUM_DIGITS 100000
 
 typedef struct {
     const int radix; //система счисления
@@ -92,7 +90,6 @@ int main() {
     a.digits[0] = 1;
     LongInt b = {q};
     init_LongInt(&b, FactTree(p));
-
 
     for (int i = 2; i <= p; ++i)
         multiply_LongInt_int(&a, i);

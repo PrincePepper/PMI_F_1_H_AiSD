@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+int compare(const void *x1, const void *x2) {
+    return (*(int *) x1 - *(int *) x2);
+}
+
 int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
@@ -7,7 +11,7 @@ int main() {
     int index;
     fscanf(fin, "%d", &index);
 
-    int mass[2001]={0};
+    int mass[2001] = {0};
 
     for (int j = 0, l = 0; j < index; j++) {
         fscanf(fin, "%d", &l);
@@ -20,3 +24,6 @@ int main() {
     }
 
 }
+
+
+

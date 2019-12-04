@@ -1,6 +1,3 @@
-//
-// Created by User on 21.10.2019.
-//
 #include <stdio.h>
 #include <math.h>
 
@@ -8,7 +5,7 @@ int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
     int x1, x2, y1, y2, tochka_x, tochka_y;
-    int center_x, center_y, a = 0, b = 0, c = 0, x3, y3;
+    int center_x, center_y, a = 0, b = 0, x3, y3;
     scanf("%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &tochka_x, &tochka_y);
     fscanf(fin, "%d%d%d%d%d%d", &x1, &y1, &x2, &y2, &tochka_x, &tochka_y);
 
@@ -44,4 +41,3 @@ int main() {
         printf("CORNER");
     }
 }
-

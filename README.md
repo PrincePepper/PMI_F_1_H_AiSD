@@ -34,7 +34,7 @@ Pmi_main_project
 * [Забор по фен-шую](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/fence.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [В поисках Васи](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/%20finding_vasya.c)
-![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 * [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 
@@ -52,7 +52,7 @@ Pmi_main_project
 * [Арифметическая прогрессия](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/progressia.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [Перевод длинных чисел](https://github.com/PrincePepper/pmi_main_project/tree/master/algoritm/Long_int) ![#c5f015](https://placehold.it/15/c5f015/000000?text=+) - файл ***`main.c`*** является решением, остальные файлы(__`convert.c`, `long_int.c`, `long_int.c`__) являются библиотекой длинных чисел
-* [НОД и числа Фибоначчи (исправленная)](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/HOD.c)
+* [НОД и числа Фибоначчи (исправленная)](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/HOD.cpp)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [Лабиринт 1](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/labyrinth_1.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
