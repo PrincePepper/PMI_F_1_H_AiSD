@@ -18,6 +18,8 @@ Pmi_main_project
 ##### Репозитории хороших  людей:
 1. [Алексей Шуров](https://github.com/alexiskhb)
 2. [Александр Кленин](https://github.com/klenin)
+3. [Максим Спорышев](https://github.com/msporyshev)
+4. [Никита Малявин](https://github.com/FooBarrior)
 
 ### Контесты с задачками:
 * [Б8119-01.03.02. Введение в алгоритмы](https://imcs.dvfu.ru/cats/main.pl?f=problems;cid=2628601;sid=PWKPnrQeENsnu1DJS8fO0etMRXbgu8)
