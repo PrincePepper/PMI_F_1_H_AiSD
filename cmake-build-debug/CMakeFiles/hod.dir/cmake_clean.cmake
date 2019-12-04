@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hod.dir/algoritm/HOD.c.obj"
+  "CMakeFiles/hod.dir/algoritm/HOD.cpp.obj"
   "hod.exe"
   "hod.exe.manifest"
   "hod.pdb"
@@ -7,6 +7,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang CXX)
   include(CMakeFiles/hod.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

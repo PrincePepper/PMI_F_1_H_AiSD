@@ -10,6 +10,7 @@ C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/point_
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/mushroom.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/finding.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/fence.dir
+C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/Lin_log_sort_2.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/count_string.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/grep.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/eggs.dir
@@ -19,7 +20,6 @@ C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/test2.
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/knitting_cude.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/tree.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/documents.dir
-C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/hod.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/factorial.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/labyrinth_1.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/newyear.dir
@@ -29,5 +29,6 @@ C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/tricky
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/prosto_podchet.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/Long_int.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/convert.dir
+C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/hod.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

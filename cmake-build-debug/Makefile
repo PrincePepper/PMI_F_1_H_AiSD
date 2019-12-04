@@ -266,6 +266,19 @@ fence/fast:
 .PHONY : fence/fast
 
 #=============================================================================
+# Target rules for targets named Lin_log_sort_2
+
+# Build rule for target.
+Lin_log_sort_2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Lin_log_sort_2
+.PHONY : Lin_log_sort_2
+
+# fast build rule for target.
+Lin_log_sort_2/fast:
+	$(MAKE) -f CMakeFiles\Lin_log_sort_2.dir\build.make CMakeFiles/Lin_log_sort_2.dir/build
+.PHONY : Lin_log_sort_2/fast
+
+#=============================================================================
 # Target rules for targets named count_string
 
 # Build rule for target.
@@ -381,19 +394,6 @@ documents: cmake_check_build_system
 documents/fast:
 	$(MAKE) -f CMakeFiles\documents.dir\build.make CMakeFiles/documents.dir/build
 .PHONY : documents/fast
-
-#=============================================================================
-# Target rules for targets named hod
-
-# Build rule for target.
-hod: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 hod
-.PHONY : hod
-
-# fast build rule for target.
-hod/fast:
-	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/build
-.PHONY : hod/fast
 
 #=============================================================================
 # Target rules for targets named factorial
@@ -512,6 +512,19 @@ convert/fast:
 	$(MAKE) -f CMakeFiles\convert.dir\build.make CMakeFiles/convert.dir/build
 .PHONY : convert/fast
 
+#=============================================================================
+# Target rules for targets named hod
+
+# Build rule for target.
+hod: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 hod
+.PHONY : hod
+
+# fast build rule for target.
+hod/fast:
+	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/build
+.PHONY : hod/fast
+
 LiMP/GREP.obj: LiMP/GREP.c.obj
 
 .PHONY : LiMP/GREP.obj
@@ -538,6 +551,33 @@ LiMP/GREP.s: LiMP/GREP.c.s
 LiMP/GREP.c.s:
 	$(MAKE) -f CMakeFiles\grep.dir\build.make CMakeFiles/grep.dir/LiMP/GREP.c.s
 .PHONY : LiMP/GREP.c.s
+
+LiMP/Lin_log_sort_2.obj: LiMP/Lin_log_sort_2.c.obj
+
+.PHONY : LiMP/Lin_log_sort_2.obj
+
+# target to build an object file
+LiMP/Lin_log_sort_2.c.obj:
+	$(MAKE) -f CMakeFiles\Lin_log_sort_2.dir\build.make CMakeFiles/Lin_log_sort_2.dir/LiMP/Lin_log_sort_2.c.obj
+.PHONY : LiMP/Lin_log_sort_2.c.obj
+
+LiMP/Lin_log_sort_2.i: LiMP/Lin_log_sort_2.c.i
+
+.PHONY : LiMP/Lin_log_sort_2.i
+
+# target to preprocess a source file
+LiMP/Lin_log_sort_2.c.i:
+	$(MAKE) -f CMakeFiles\Lin_log_sort_2.dir\build.make CMakeFiles/Lin_log_sort_2.dir/LiMP/Lin_log_sort_2.c.i
+.PHONY : LiMP/Lin_log_sort_2.c.i
+
+LiMP/Lin_log_sort_2.s: LiMP/Lin_log_sort_2.c.s
+
+.PHONY : LiMP/Lin_log_sort_2.s
+
+# target to generate assembly for a file
+LiMP/Lin_log_sort_2.c.s:
+	$(MAKE) -f CMakeFiles\Lin_log_sort_2.dir\build.make CMakeFiles/Lin_log_sort_2.dir/LiMP/Lin_log_sort_2.c.s
+.PHONY : LiMP/Lin_log_sort_2.c.s
 
 LiMP/_count_string.obj: LiMP/_count_string.c.obj
 
@@ -809,32 +849,32 @@ LiMP/point_the_corner.c.s:
 	$(MAKE) -f CMakeFiles\point_the_corner.dir\build.make CMakeFiles/point_the_corner.dir/LiMP/point_the_corner.c.s
 .PHONY : LiMP/point_the_corner.c.s
 
-algoritm/HOD.obj: algoritm/HOD.c.obj
+algoritm/HOD.obj: algoritm/HOD.cpp.obj
 
 .PHONY : algoritm/HOD.obj
 
 # target to build an object file
-algoritm/HOD.c.obj:
-	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.c.obj
-.PHONY : algoritm/HOD.c.obj
+algoritm/HOD.cpp.obj:
+	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.cpp.obj
+.PHONY : algoritm/HOD.cpp.obj
 
-algoritm/HOD.i: algoritm/HOD.c.i
+algoritm/HOD.i: algoritm/HOD.cpp.i
 
 .PHONY : algoritm/HOD.i
 
 # target to preprocess a source file
-algoritm/HOD.c.i:
-	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.c.i
-.PHONY : algoritm/HOD.c.i
+algoritm/HOD.cpp.i:
+	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.cpp.i
+.PHONY : algoritm/HOD.cpp.i
 
-algoritm/HOD.s: algoritm/HOD.c.s
+algoritm/HOD.s: algoritm/HOD.cpp.s
 
 .PHONY : algoritm/HOD.s
 
 # target to generate assembly for a file
-algoritm/HOD.c.s:
-	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.c.s
-.PHONY : algoritm/HOD.c.s
+algoritm/HOD.cpp.s:
+	$(MAKE) -f CMakeFiles\hod.dir\build.make CMakeFiles/hod.dir/algoritm/HOD.cpp.s
+.PHONY : algoritm/HOD.cpp.s
 
 algoritm/Long_int/convert.obj: algoritm/Long_int/convert.c.obj
 
@@ -1421,6 +1461,7 @@ help:
 	@echo ... mushroom
 	@echo ... finding
 	@echo ... fence
+	@echo ... Lin_log_sort_2
 	@echo ... count_string
 	@echo ... grep
 	@echo ... eggs
@@ -1430,7 +1471,6 @@ help:
 	@echo ... knitting_cude
 	@echo ... tree
 	@echo ... documents
-	@echo ... hod
 	@echo ... factorial
 	@echo ... labyrinth_1
 	@echo ... newyear
@@ -1440,11 +1480,15 @@ help:
 	@echo ... prosto_podchet
 	@echo ... Long_int
 	@echo ... convert
+	@echo ... hod
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... LiMP/GREP.obj
 	@echo ... LiMP/GREP.i
 	@echo ... LiMP/GREP.s
+	@echo ... LiMP/Lin_log_sort_2.obj
+	@echo ... LiMP/Lin_log_sort_2.i
+	@echo ... LiMP/Lin_log_sort_2.s
 	@echo ... LiMP/_count_string.obj
 	@echo ... LiMP/_count_string.i
 	@echo ... LiMP/_count_string.s

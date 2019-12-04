@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-int compare(const void *x1, const void *x2) {
-    return (*(int *) x1 - *(int *) x2);
-}
 
 int main() {
     FILE *fin = fopen("input.txt", "r");

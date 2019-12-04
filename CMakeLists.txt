@@ -14,6 +14,7 @@ add_executable(fence LiMP/fence.c)
 add_executable(finding "LiMP/ finding_vasya.c")
 add_executable(ideas LiMP/ideas.c)
 add_executable(lanterns LiMP/lanterns.c)
+add_executable(Lin_log_sort_2 LiMP/Lin_log_sort_2.c)
 #   доп задания
 add_executable(count_string "LiMP/ count_string.c")
 add_executable(grep LiMP/GREP.c)

@@ -37,6 +37,8 @@ Pmi_main_project
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 * [Вася и мысли](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/ideas.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+* [Lin-log sort 2](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/Lin_log_sort_2.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 
 # АиСД:
 * [Марфа Геннадьевна ест яйца](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/eggs.c)
