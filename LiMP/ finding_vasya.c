@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int compare(const void *x1, const void *x2) {
     return (*(int *) x2 - *(int *) x1);
 }
@@ -17,44 +18,24 @@ int main() {
         fscanf(fin, "%d", &mass[i]);
     }
     qsort(mass, K, sizeof(int), compare);
-    int value = 0;
-    int etag = 1;
+    int mass_etag[N];
+    mass_etag[0] = 0;
     int count = 0;
-    int count2 = 0;
-    int count3 = 0;
+    int podiez = 0;
     for (int i = 0; i < K; i++) {
-        if (mass[i] * N * M < X) {
-            break;
-        }
-        int kol = 0;
-        int kol2 = 0;
-        while (kol < X) {
-            kol = mass[i] * M * value;
-            value++;
-        }
-        value -= 2;
-        kol2 = mass[i] * M * value;
-        while (kol2 < X) {
-            kol2 += mass[i];
-            count3++;
-        }
-        value++;
-        if (etag == value) {
-            count2 += count3 - count;
-            count = count3;
-        } else {
-            count2 += count3;
-        }
-        count3 = 0;
-        etag = value;
-        value = 0;
-    }
-    if (count2 == 0) {
-        fprintf(fout, "-1");
-    } else {
-        fprintf(fout, "%d", count2);
-    }
+        for (int g = 1; g <= N; g++) {
+            int a = mass[i] * M * g;
 
+            mass_etag[g - 1] = a;
+            podiez = mass_etag[g - 1] - mass[i] * M;
+            if (mass_etag[g - 1] >= X) break;
+        }
+        while (podiez < X) {
+            podiez += mass[i];
+            count++;
+        }
+    }
+    fprintf(fout, "%d", count);
 }
 
 

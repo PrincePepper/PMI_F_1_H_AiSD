@@ -17,30 +17,23 @@ int main() {
     int len_word = strlen(word);
     int len_comb = strlen(combination);
 
-    int mass[len_word];
+    char mass[len_word];
     for (int i = 0; i < len_word; i++) {
-        mass[i] = 0;
+        mass[i] = '.';
     }
-
-    int alphabet_new[26] = {0};
-    for (int j = 0; j <= 20; j++) {
-        for (int i = 'a'; i < 'z'; i++)
-            if (combination[j] == i) {
-                alphabet_new[i - 'a']++;
-            }
-    }
-
-    char alphabet2[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                          't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    for (int j = 0; j < len_word; j++) {
-        for (int i = 0; i < 26; i++) {
-            if (alphabet2[i] == word[j]) {
-                if (alphabet_new[i] % 2 == 0) {
-                    fprintf(fout, ".");
-                } else {
-                    fprintf(fout, "%c", word[j]);
-                }
+    int g = 0;
+    for (int i = 0; i < len_word; i++) {
+        for (int j = 0; j < len_comb; j++) {
+            if (word[i] == combination[j]) {
+                if (g % 2 == 0) {
+                    mass[i] = word[i];
+                } else mass[i] = '.';
+                g++;
             }
         }
+        g = 0;
+    }
+    for (int i = 0; i < len_word; i++) {
+        fprintf(fout, "%c", mass[i]);
     }
 }
