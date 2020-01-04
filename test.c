@@ -1,51 +1,43 @@
 #include <stdio.h>
-#include <string.h>
-
-#define MAX_PROGRESS 101
+#include <limits.h>
 
 int main() {
-    int N;
-    FILE *infile = fopen("input.txt", "r");
-    fscanf(infile, "%d", &N);
-    N++;
-    int a[MAX_PROGRESS];
-    int b[MAX_PROGRESS] = {0};
-    int c[MAX_PROGRESS];
-    for (int i = 1; i < N; i++) {
-        fscanf(infile, "%d", &a[i]);
+    FILE *fin = fopen("input.txt", "r");
+    FILE *fout = fopen("output.txt", "w");
+    int N = 0;
+    int value = 0;
+
+    fscanf(fin, "%d", &N); //кол-во человек
+
+    int max_prog = INT_MIN, max_match = INT_MIN, max_teach = INT_MIN, max = INT_MIN;
+
+    int mass[N][3];
+    for (int i = 0; i < N; i++) { //нахождения максимума
+        fscanf(fin, "%d%d%d", &mass[i][0], &mass[i][1], &mass[i][2]);
+        if (mass[i][0] > max_prog) max_prog = mass[i][0];
+        if (mass[i][1] > max_match) max_match = mass[i][1];
+        if (mass[i][2] > max_teach) max_teach = mass[i][2];
     }
-    fclose(infile);
-    int raznost = 0;
-    int M = 0;
-    int M1 = 0;
-    int p;
-    for (int i = 1; i < N; i++) {
-        for (int j = i + 1; j < N; j++) {
-            raznost = a[i] - a[j];
-            p = a[i];
-            for (int g = i + 1; g < N; g++) {
-                if (p - a[g] == raznost) {
-                    M1++;
-                    b[i] = a[i];
-                    b[g] = a[g];
-                    p = a[g];
-                }
-            }
-            if (M1 > M) {
-                memcpy(c, b, 4 * N);
-                M = M1;
-            }
-            M1 = 0;
-            memset(b, 0, 404);
-        }
+    for (int i = 0; i < N; i++) {
+        int max_students = mass[i][0] + mass[i][1] + mass[i][2];
+
+        if (max_students == max_prog) value++;
+
+        else if (max_students == max_match) value++;
+
+        else if (max_students == max_match) value++;
+
+        else if (mass[i][0] == max_match || mass[i][0] == max_prog || mass[i][0] == max_teach) value++;
     }
 
-    FILE *outfile = fopen("output.txt", "w");
-    fprintf(outfile, "%d\n", ++M);
+    fprintf(fout, "%d", value);
     for (int i = 0; i < N; i++) {
-        if (c[i] != 0) {
-            fprintf(outfile, "%d ", i);
-        }
+        int max_students = mass[i][0] + mass[i][1] + mass[i][2];
+
+        if (max_students == max_prog || max_students == max_match || max_students == max_match)
+            fprintf(fout, " %d", i + 1);
+
+        else if (mass[i][0] == max_match || mass[i][0] == max_prog || mass[i][0] == max_teach)
+            fprintf(fout, " %d", i + 1);
     }
-    fclose(outfile);
 }
