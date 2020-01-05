@@ -34,6 +34,7 @@ add_executable(glushchenko_pawns algoritm/glushchenko_pawns.c)
 add_executable(newyear algoritm/NewYear.c)
 add_executable(knitting_cude algoritm/knitting_cube.c)
 add_executable(guess_word algoritm/guess_word.c)
+add_executable(cap algoritm/cap.c)
 #   доп задания
 add_executable(tricky_numbers algoritm/TrickyNumber/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)

@@ -79,6 +79,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/labyrinth_1.dir/DependInfo.cmake"
   "CMakeFiles/newyear.dir/DependInfo.cmake"
   "CMakeFiles/glushchenko_pawns.dir/DependInfo.cmake"
+  "CMakeFiles/cap.dir/DependInfo.cmake"
   "CMakeFiles/guess_word.dir/DependInfo.cmake"
   "CMakeFiles/tricky_numbers.dir/DependInfo.cmake"
   "CMakeFiles/prosto_podchet.dir/DependInfo.cmake"

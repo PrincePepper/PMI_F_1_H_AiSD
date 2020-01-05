@@ -24,6 +24,7 @@ C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/factor
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/labyrinth_1.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/newyear.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/glushchenko_pawns.dir
+C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/cap.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/guess_word.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/tricky_numbers.dir
 C:/Users/User/CLionProjects/pmi_main_project/cmake-build-debug/CMakeFiles/prosto_podchet.dir

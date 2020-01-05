@@ -448,6 +448,19 @@ glushchenko_pawns/fast:
 .PHONY : glushchenko_pawns/fast
 
 #=============================================================================
+# Target rules for targets named cap
+
+# Build rule for target.
+cap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 cap
+.PHONY : cap
+
+# fast build rule for target.
+cap/fast:
+	$(MAKE) -f CMakeFiles\cap.dir\build.make CMakeFiles/cap.dir/build
+.PHONY : cap/fast
+
+#=============================================================================
 # Target rules for targets named guess_word
 
 # Build rule for target.
@@ -1065,6 +1078,33 @@ algoritm/TrickyNumber/tricky.cpp.s:
 	$(MAKE) -f CMakeFiles\test2.dir\build.make CMakeFiles/test2.dir/algoritm/TrickyNumber/tricky.cpp.s
 .PHONY : algoritm/TrickyNumber/tricky.cpp.s
 
+algoritm/cap.obj: algoritm/cap.c.obj
+
+.PHONY : algoritm/cap.obj
+
+# target to build an object file
+algoritm/cap.c.obj:
+	$(MAKE) -f CMakeFiles\cap.dir\build.make CMakeFiles/cap.dir/algoritm/cap.c.obj
+.PHONY : algoritm/cap.c.obj
+
+algoritm/cap.i: algoritm/cap.c.i
+
+.PHONY : algoritm/cap.i
+
+# target to preprocess a source file
+algoritm/cap.c.i:
+	$(MAKE) -f CMakeFiles\cap.dir\build.make CMakeFiles/cap.dir/algoritm/cap.c.i
+.PHONY : algoritm/cap.c.i
+
+algoritm/cap.s: algoritm/cap.c.s
+
+.PHONY : algoritm/cap.s
+
+# target to generate assembly for a file
+algoritm/cap.c.s:
+	$(MAKE) -f CMakeFiles\cap.dir\build.make CMakeFiles/cap.dir/algoritm/cap.c.s
+.PHONY : algoritm/cap.c.s
+
 algoritm/documents.obj: algoritm/documents.c.obj
 
 .PHONY : algoritm/documents.obj
@@ -1475,6 +1515,7 @@ help:
 	@echo ... labyrinth_1
 	@echo ... newyear
 	@echo ... glushchenko_pawns
+	@echo ... cap
 	@echo ... guess_word
 	@echo ... tricky_numbers
 	@echo ... prosto_podchet
@@ -1543,6 +1584,9 @@ help:
 	@echo ... algoritm/TrickyNumber/tricky.obj
 	@echo ... algoritm/TrickyNumber/tricky.i
 	@echo ... algoritm/TrickyNumber/tricky.s
+	@echo ... algoritm/cap.obj
+	@echo ... algoritm/cap.i
+	@echo ... algoritm/cap.s
 	@echo ... algoritm/documents.obj
 	@echo ... algoritm/documents.i
 	@echo ... algoritm/documents.s
