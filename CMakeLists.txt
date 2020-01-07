@@ -19,7 +19,9 @@ add_executable(Lin_log_sort_2 LiMP/Lin_log_sort_2.c)
 add_executable(count_string "LiMP/ count_string.c")
 add_executable(grep LiMP/GREP.c)
 add_executable(max_int LiMP/max_int.c)
-
+#   библиотека списков
+add_executable(linear_lib LiMP/Linear_sequence/linear_sequence.cpp LiMP/Linear_sequence/linear_sequence.h)
+add_executable(linear_sequence LiMP/Linear_sequence/main.c)
 #   это все проги по АиСД
 add_executable(eggs algoritm/eggs.c)
 add_executable(summa algoritm/summa.c)
