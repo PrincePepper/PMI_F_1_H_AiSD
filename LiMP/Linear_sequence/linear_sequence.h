@@ -2,6 +2,7 @@
 #define LINEAR_SEQUENCE_H_INCLUDED
 
 #include <cstdlib>
+#include <cstdio>
 
 // Неинициализированное значение дескриптора контейнера
 #define LSQ_HandleInvalid NULL

@@ -4,6 +4,7 @@ project(untitled C)
 set(CMAKE_C_STANDARD 99)
 #   здесь тестовый код
 add_executable(test test.c)
+add_executable(test_cpp test.cpp)
 
 #   это все проги по ЯиМП
 add_executable(broker LiMP/broker.c)
@@ -37,6 +38,8 @@ add_executable(newyear algoritm/NewYear.c)
 add_executable(knitting_cude algoritm/knitting_cube.c)
 add_executable(guess_word algoritm/guess_word.c)
 add_executable(cap algoritm/cap.c)
+add_executable(rally algoritm/rally.c)
+
 #   доп задания
 add_executable(tricky_numbers algoritm/TrickyNumber/Tricky_number.c)
 add_executable(prosto_podchet algoritm/prosto_podchet.c)
@@ -52,3 +55,13 @@ set(CMAKE_CXX_STANDARD 98)
 add_executable(test2 algoritm/TrickyNumber/tricky.cpp algoritm/TrickyNumber/run_tricky.cpp)
 #   нод и числа фибоначи
 add_executable(hod algoritm/HOD.cpp)
+
+#   экзамен по яимпу
+add_executable(three_numbers LiMP/EXAM/three_numbers.c)
+add_executable(distance LiMP/EXAM/distance.c)
+add_executable(random_substance LiMP/EXAM/random_substance.c)
+add_executable(random_int LiMP/EXAM/random_int.c)
+add_executable(prime_numbers LiMP/EXAM/prime_numbers.c)
+add_executable(fib_numb LiMP/EXAM/fib_numb.c)
+add_executable(factorial2 LiMP/EXAM/factorial.c)
+add_executable(algoritm_evclid LiMP/EXAM/algoritm_evclid.c)
