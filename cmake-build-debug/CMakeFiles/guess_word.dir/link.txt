@@ -1,3 +1,0 @@
-"A:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\guess_word.dir/objects.a
-C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\guess_word.dir/objects.a @CMakeFiles\guess_word.dir\objects1.rsp
-C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\guess_word.dir/objects.a -Wl,--no-whole-archive  -o guess_word.exe -Wl,--out-implib,libguess_word.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\guess_word.dir\linklibs.rsp

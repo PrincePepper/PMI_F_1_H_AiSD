@@ -1,3 +1,0 @@
-"A:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Lin_log_sort_2.dir/objects.a
-C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\ar.exe cr CMakeFiles\Lin_log_sort_2.dir/objects.a @CMakeFiles\Lin_log_sort_2.dir\objects1.rsp
-C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Lin_log_sort_2.dir/objects.a -Wl,--no-whole-archive  -o Lin_log_sort_2.exe -Wl,--out-implib,libLin_log_sort_2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Lin_log_sort_2.dir\linklibs.rsp
