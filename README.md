@@ -1,4 +1,4 @@
-Pmi_main_project
+first_course_programming
 =====================
 ###### ***основные программы для ЯиМП и АиСД***
 
