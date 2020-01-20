@@ -1,64 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct {
-    int combination;
-    int number;
-} accordance_combination_number;
+#define  MAX_ELEMENT (1000) //максимальное колличество символов способное записать программа
 
-typedef struct {
-    int number;
-    int number_of_picture;
-} acccordance_number_picture;
+/*данная программа расчитана на самый простой запрос без параметров
+ * Пример: ./test.exe -h 5 input.txt
+ *                      /      |
+ *                     /       |
+ *                  патерн    файл
+ *
+*/
+int main(int argc, char **argv) {
+    FILE *fin = fopen(argv[3], "r"); //считываем 3 аргумент argv в котором
+    char a[MAX_ELEMENT]; // создание массива для наших символов
 
-int main() {
-    accordance_combination_number coordination[14];
-    int counter = 0;
-    int digit = 0;
-    int boolean_invert[4] = {0};
-    int boolean[4] = {0};
-    for (int i = 0; i < 16; ++i) {
-        for (int j = 0; j < 4; ++j) {
-            if ((counter > 0) && (counter % 2 != 0)) {
-                boolean_invert[j] = 1;
-                counter = counter / 2;
-            }
-            if ((counter > 0) && (counter % 2 == 0)) {
-                boolean_invert[j] = 0;
-                counter = counter / 2;
-            }
+    while (!feof(fin)) {    //работает пока файл не пустой
+        fgets(a, MAX_ELEMENT, fin);// счивает всю строку и записывает ее в наш массив "a"
+        if (strstr(a, argv[2])) { // если в строке есть наш патерн, которыйй хранится
+            printf("%s", a); // выводим эту строку если нашел патерн
         }
-        for (int k = 0; k < 4; ++k) {
-            boolean[k] = boolean_invert[3 - k];
-        }
-
-        if (counter > 0) {
-            for (int i = 0; i < 4; ++i) {
-                digit *= 10;
-                digit += boolean[i];
-            }
-        }
-        counter++;
-        coordination[i].combination = digit;
     }
-    //NEED TO BRING NUMBERS GUYS
-    acccordance_number_picture coordination_2[54]; //or more
-    //должно быть strcopy с номеров, введенных в 1 структуре, во 2 структуру
-    int counter_2 = 1;
-    for (int l = 0; l < 54; ++l) {
-        coordination_2[l].number_of_picture = counter_2;
-        counter_2++;
-    }
-    //ввод пользовательских данных
-    int user_data = 0;
-    int randomize_number = 0;
+    printf("\n");
 
-    scanf("%d", &user_data);
-    for (int m = 0; m < 16; ++m) {
-        if (user_data == coordination[m].combination) {
-            randomize_number = coordination[m].number;
-            break;
-        }
-        //прописать рандомайзер
-    }
 }
