@@ -2,7 +2,7 @@ first_course_programming
 =====================
 ###### ***основные программы для ЯиМП и АиСД***
 
-# Здесь будут появлятся с течением времени все мои программы по курсу ПМИ
+# Все мои программы по 1 курсу ПМИ
 ##### Со мной вы сможете связаться:
 1. [Telegram](https://tgmsg.ru/princepepper)
 2. [Вконтакте](https://vk.com/princepepper)
@@ -74,6 +74,8 @@ first_course_programming
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 * [Кепка](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/cap.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+* [Митинг](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/rally.c)
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+)
 # Дополнительные задания:
 1. [GREP 2.0](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/GREP.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
@@ -84,4 +86,6 @@ first_course_programming
 4. [Хитрый член](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/TrickyNumber/Tricky_number.c)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
 5. [Просто посчитать](https://github.com/PrincePepper/pmi_main_project/blob/master/algoritm/prosto_podchet.c)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
+6. [Библиотека списков](https://github.com/PrincePepper/pmi_main_project/blob/master/LiMP/Linear_sequence/linear.cpp)
 ![#c5f015](https://placehold.it/15/c5f015/000000?text=+)
