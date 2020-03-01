@@ -102,7 +102,7 @@ void LSQ_DestroySequence(LSQ_HandleT handle) {
 }
 
 ///Функция, создающая пустой контейнер. Возвращает назначенный ему дескриптор
-LSQ_HandleT LSQ_CreateSequence(void) {
+LSQ_HandleT LSQ_CreateSequence() {
     pL_List new_list = new(L_List);
     new_list->first = create_item(NULL, NULL, 0);
     new_list->last = create_item(new_list->first, NULL, 0);
