@@ -15,11 +15,11 @@ void swap(int *a, int *b) {
 
 void qsort(int left, int right) {
     int l = left, r = right;
-    int piv = mass[(((l + r) / 2) + l + r) / 3];
+    int mid = mass[(((l + r) / 2) + l + r) / 3];
     while (l <= r) {
-        while (mass[l] < piv)
+        while (mass[l] < mid)
             l++;
-        while (mass[r] > piv)
+        while (mass[r] > mid)
             r--;
         if (l <= r)
             swap(&mass[l++], &mass[r--]);
