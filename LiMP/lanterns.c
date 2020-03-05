@@ -9,9 +9,9 @@ int main() {
     int max = 1;
     int value = 0;
     int H = 0, S = 0;
-    fscanf(fin, "%d", &kol);
+    scanf("%d", &kol);
     for (int j = 0; j < kol; j++) {
-        fscanf(fin, "%d%d", &S, &H);
+        scanf("%d%d", &S, &H);
         if (abs(S - H) >= 0) {
             if (S - H < 0) {
                 mass[0] += 1;
@@ -27,5 +27,5 @@ int main() {
         if (value > max)
             max = value;
     }
-    fprintf(fout, "%d", max);
+    printf("%d", max);
 }

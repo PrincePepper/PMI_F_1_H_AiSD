@@ -66,3 +66,6 @@ add_executable(prime_numbers LiMP/BB/prime_numbers.c)
 add_executable(fib_numb LiMP/BB/fib_numb.c)
 add_executable(factorial2 LiMP/BB/factorial.c)
 add_executable(algoritm_evclid LiMP/BB/algoritm_evclid.c)
+
+add_executable(lin_logsort AiSD/lin_logsort.c)
+add_executable(square_sort AiSD/square_sort.c)

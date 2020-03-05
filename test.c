@@ -1,25 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
-#define  MAX_ELEMENT (1000) //максимальное колличество символов способное записать программа
+//void merge(int l,int mid,int r){
+//    int p_l=l,p_r=mid;
+//    vector <int> res;
+//    while (p_l!=mid&&p_r!=r+1){
+//        if(p_l==mid){
+//            res.push_back(arr[p_r]);
+//            p_r++;
+//        }else if(p_r==r+1){ res.push_back(arr[p_r]);
+//            } else if(arr[p_l]=arr[p_r]){
+//            res.push_back(arr[p_l]);
+//            p_l++;
+//        }else {
+//            res.push_back(arr[p_r]);
+//            p_r++;
+//        }
+//    }
+//}
 
-/*данная программа расчитана на самый простой запрос без параметров
- * Пример: ./test.exe -h 5 input.txt
- *                      /      |
- *                     /       |
- *                  патерн    файл
- *
-*/
+//void merge_sort(l,r){
+//    if(l==r) return;
+//    int mid = (l+r)/2;
+//    merge_sort(l,mid-1);
+//    merge_sort(mid,r);
+//    merge(l,mid,r);
+//}
 int main(int argc, char **argv) {
-    FILE *fin = fopen(argv[3], "r"); //считываем 3 аргумент argv в котором
-    char a[MAX_ELEMENT]; // создание массива для наших символов
-
-    while (!feof(fin)) {    //работает пока файл не пустой
-        fgets(a, MAX_ELEMENT, fin);// счивает всю строку и записывает ее в наш массив "a"
-        if (strstr(a, argv[2])) { // если в строке есть наш патерн, которыйй хранится
-            printf("%s", a); // выводим эту строку если нашел патерн
-        }
-    }
-    printf("\n");
 
 }
