@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 
-int mass[100000];
 
 void swap(int *a, int *b) {
     int t;
@@ -13,7 +12,7 @@ void swap(int *a, int *b) {
     *b = t;
 }
 
-void qsort(int left, int right) {
+void qsort(int *mass, int left, int right) {
     int l = left, r = right;
     int mid = mass[(((l + r) / 2) + l + r) / 3];
     while (l <= r) {
@@ -25,24 +24,24 @@ void qsort(int left, int right) {
             swap(&mass[l++], &mass[r--]);
     }
     if (left < r)
-        qsort(left, r);
+        qsort(mass, left, r);
     if (right > l)
-        qsort(l, right);
+        qsort(mass, l, right);
 }
 
 int main() {
     FILE *fin = fopen("input.txt", "r");
     FILE *fout = fopen("output.txt", "w");
-    int N = 0;
-
+    int N = 0, K = 0;
     fscanf(fin, "%d", &N);
+    int mass[N];
     for (int i = 0; i < N; i++) {
         fscanf(fin, "%d", &mass[i]);
     }
 
-    qsort(0, N - 1);
+    qsort(mass, 0, N - 1);
 
-    for (int i = 0; i < N; i++) {
-        fprintf(fout, "%d ", mass[i]);
-    }
+
+    fprintf(fout, "%d ", mass[0]);
+
 }

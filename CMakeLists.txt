@@ -69,3 +69,7 @@ add_executable(algoritm_evclid LiMP/BB/algoritm_evclid.c)
 
 add_executable(lin_logsort AiSD/lin_logsort.c)
 add_executable(square_sort AiSD/square_sort.c)
+add_executable(bucket_sort AiSD/bucket_sort.c)
+add_executable(k_statistik AiSD/k_statistik.c)
+add_executable(merge_sort AiSD/merge_sort.c)
+add_executable(search_inversion AiSD/search_inversion.c)

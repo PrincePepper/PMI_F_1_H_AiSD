@@ -1,40 +1,54 @@
-#include <cstdlib>
-#include <clocale>
-#include <cmath>
-#include <ctime>
-#include <windows.h>
+#include <fstream>
+#include <vector>
+#include <string>
 
-#ifndef TEST
-#define TEST 8245
+using namespace std;
 
-#define Ks 6,3
+vector<string> bucket_sort(vector<string> mass_words) {
 
-int a[5] = {TEST, TEST, TEST, TEST}, Rw;
-float s, k;
-__int64 Time;
+    for (int i = 2; i > -1; i--) {
+        vector<vector<string>> support_mass;
+        support_mass.resize(123);
 
-#define Pi 3.14
-#endif
+        for (int j = 0; j < mass_words.size(); j++) {
+            string letter = mass_words[j];
+            support_mass[(int) letter[i]].push_back(letter);
+        }
+
+        mass_words.clear();
+
+        for (int j = 0; j < support_mass.size(); j++) {
+            if (support_mass[j].size() > 0) {
+                for (int l = 0; l < support_mass[j].size(); l++) {
+                    mass_words.push_back(support_mass[j][l]);
+                }
+            }
+        }
+    }
+    return mass_words;
+}
+
 
 int main() {
-    setlocale(LC_ALL, "ru-RU");
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
 
-    time(&Time);
-    srand(Time);
-    printf("Enter the coefficients: ");
-    for (int &i : a) {
-        i = rand();
-        time(&Time);
-        srand(Time);
-        Sleep((int) rand() / 10001 * 800 + 200);
+    int n;
+    fin >> n;
+
+    vector<string> mass_of_words;
+    string word;
+
+    for (int i = 0; i < n; i++) {
+        fin >> word;
+        mass_of_words.push_back(word);
     }
-    time(&Time);
-    srand(Time);
-    Rw = 8, 24 * Ks + 19 * ((int) rand() / (32767 + 1) * (1 - 1) + 1);
-    k = (a[4] + a[1] + a[2] + a[3]) / a[3] * 4;
-    scanf("%d", &Rw);
-    s = pow(s, 2) + Ks / k;
-    s = s * 2 / 3 * pow(Rw, 2) * Pi;
 
-    return floor(s + 0.5);
+    vector<string> sorted_mass;
+
+    sorted_mass = bucket_sort(mass_of_words);
+
+    for (int i = 0; i < n; i++) {
+        fout << sorted_mass[i] << endl;
+    }
 }
