@@ -1,4 +1,4 @@
-first_course_programming
+first_course_programming [No Longer Support]
 =====================
 ###### ***основные программы для ЯиМП и АиСД***
 
@@ -7,7 +7,7 @@ first_course_programming
 1. [Telegram](https://tgmsg.ru/princepepper)
 2. [Вконтакте](https://vk.com/princepepper)
 3. [Instargam](https://www.instagram.com/prince_pepper_official/?hl=ru)
-4. [Мой сайт](http://www.ppts.website/)(в разработке)
+4. [Мой сайт](https://ssereda.ru/)
 
 ##### Полезные ссылки:
 * [Dpaste](https://dpaste.de/) - предназначен для передачи кода
@@ -19,7 +19,6 @@ first_course_programming
 1. [Алексей Шуров](https://github.com/alexiskhb)
 2. [Александр Кленин](https://github.com/klenin)
 3. [Максим Спорышев](https://github.com/msporyshev)
-4. [Никита Малявин](https://github.com/FooBarrior)
 
 ### Контесты с задачками:
 * [Б8119-01.03.02. Введение в алгоритмы](https://imcs.dvfu.ru/cats/main.pl?f=problems;cid=2628601;sid=PWKPnrQeENsnu1DJS8fO0etMRXbgu8)
