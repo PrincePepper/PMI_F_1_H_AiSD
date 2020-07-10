@@ -1,24 +1,23 @@
 first_course_programming [No Longer Support]
 =====================
-###### ***основные программы для ЯиМП и АиСД***
 
-# Все мои программы по 1 курсу ПМИ
-##### Со мной вы сможете связаться:
+# Все мои программы по 1 курсу ПМИ по "Языкам и методам программирования" и "Введение в Алгоритмы и структуры данных"
+
+***The project was released for my University course***
+
+##### My contacts:
 1. [Telegram](https://tgmsg.ru/princepepper)
 2. [Вконтакте](https://vk.com/princepepper)
 3. [Instargam](https://www.instagram.com/prince_pepper_official/?hl=ru)
-4. [Мой сайт](https://ssereda.ru/)
+4. <sereda.wk@gmail.com>
+
+##### Преподователь:
+[Алексей Шуров](https://github.com/alexiskhb)
 
 ##### Полезные ссылки:
-* [Dpaste](https://dpaste.de/) - предназначен для передачи кода
 * [Pastebin](https://pastebin.com/) - предназначен для передачи кода, но менее удобен
 * [Руководство по стилю написания кода на С](https://cs50.readthedocs.io/style/c/)
-* [Книги по Java - языку](https://vk.com/proglib?w=wall-54530371_269329)
 * [Алгоритмы и структуры данных](https://mathmachine.github.io/wiki/algorithms.html)
-##### Репозитории хороших  людей:
-1. [Алексей Шуров](https://github.com/alexiskhb)
-2. [Александр Кленин](https://github.com/klenin)
-3. [Максим Спорышев](https://github.com/msporyshev)
 
 ### Контесты с задачками:
 * [Б8119-01.03.02. Введение в алгоритмы](https://imcs.dvfu.ru/cats/main.pl?f=problems;cid=2628601;sid=PWKPnrQeENsnu1DJS8fO0etMRXbgu8)
