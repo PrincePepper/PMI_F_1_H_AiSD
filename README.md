@@ -1,5 +1,4 @@
-first_course_programming [No Longer Support]
-=====================
+# PMI_F_1_H_IIMP_AISD[No Longer Support]
 
 ### Все мои программы по 1 курсу ПМИ по "Языкам и методам программирования" и "Введение в Алгоритмы и структуры данных"
 
